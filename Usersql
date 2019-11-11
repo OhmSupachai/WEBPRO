@@ -1,0 +1,5 @@
+insert into  (user_id, username, password) values (1, 'kchopy0', 'weUBQt9d');
+insert into  (user_id, username, password) values (2, 'jwagg1', '37vKNAq');
+insert into  (user_id, username, password) values (3, 'tshallcroff2', 'q7FSBqcpdi');
+insert into  (user_id, username, password) values (4, 'ksanchez3', '057PKY');
+insert into  (user_id, username, password) values (5, 'ibramelt4', 'bO7Gs2S');
