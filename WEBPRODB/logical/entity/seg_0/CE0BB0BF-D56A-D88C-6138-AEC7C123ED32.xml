@@ -1,0 +1,87 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="CE0BB0BF-D56A-D88C-6138-AEC7C123ED32" name="Student">
+<createdBy>ohmsu</createdBy>
+<createdTime>2562-11-11 12:46:11 UTC</createdTime>
+<ownerDesignName>WEBPRODB</ownerDesignName>
+<engineerTo>
+<item key="15A11C47-B120-B704-0A40-12FE470E3156" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="STUDENT_ID" id="AA37F35F-28F5-543E-FBD5-BD8BC8DA427F">
+<createdBy>ohmsu</createdBy>
+<createdTime>2562-11-11 12:46:23 UTC</createdTime>
+<ownerDesignName>WEBPRODB</ownerDesignName>
+<engineerTo>
+<item key="15A11C47-B120-B704-0A40-12FE470E3156" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="STUDENT_NAME" id="B834025D-5AED-AFE5-4E65-6FA161F0291A">
+<createdBy>ohmsu</createdBy>
+<createdTime>2562-11-11 12:46:53 UTC</createdTime>
+<ownerDesignName>WEBPRODB</ownerDesignName>
+<engineerTo>
+<item key="15A11C47-B120-B704-0A40-12FE470E3156" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="STUDENT_EMAIL" id="45CBCEA6-7E49-0DCF-5A01-D61C2315C665">
+<createdBy>ohmsu</createdBy>
+<createdTime>2562-11-11 12:49:42 UTC</createdTime>
+<ownerDesignName>WEBPRODB</ownerDesignName>
+<engineerTo>
+<item key="15A11C47-B120-B704-0A40-12FE470E3156" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="USER_ID" id="4BCFFB06-58F1-CB9F-E7C5-41D8E0E2632D">
+<createdBy>ohmsu</createdBy>
+<createdTime>2562-11-11 13:02:16 UTC</createdTime>
+<generatorID>36C9CE50-5790-407D-CF1E-D98560848057</generatorID>
+<ownerDesignName>WEBPRODB</ownerDesignName>
+<engineerTo>
+<item key="15A11C47-B120-B704-0A40-12FE470E3156" value="true"/>
+</engineerTo>
+<referedAttribute>BFFB5CA3-63C2-D092-81E2-C4F7F54D6E67</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="6B84F8FE-EA0F-411D-8B3F-B7399E0F9A4A" name="Student PK">
+<createdBy>ohmsu</createdBy>
+<createdTime>2562-11-11 12:46:46 UTC</createdTime>
+<ownerDesignName>WEBPRODB</ownerDesignName>
+<engineerTo>
+<item key="15A11C47-B120-B704-0A40-12FE470E3156" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>AA37F35F-28F5-543E-FBD5-BD8BC8DA427F</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

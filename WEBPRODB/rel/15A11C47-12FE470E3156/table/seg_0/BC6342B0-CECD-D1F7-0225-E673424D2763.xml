@@ -1,0 +1,100 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="BC6342B0-CECD-D1F7-0225-E673424D2763" name="Student">
+<createdBy>ohmsu</createdBy>
+<createdTime>2562-11-11 13:05:48 UTC</createdTime>
+<generatorID>CE0BB0BF-D56A-D88C-6138-AEC7C123ED32</generatorID>
+<ownerDesignName>WEBPRODB</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="STUDENT_ID" id="1A3B801C-C216-F74F-4475-A7F90F2096BF">
+<createdBy>ohmsu</createdBy>
+<createdTime>2562-11-11 13:05:48 UTC</createdTime>
+<generatorID>AA37F35F-28F5-543E-FBD5-BD8BC8DA427F</generatorID>
+<ownerDesignName>WEBPRODB</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="STUDENT_NAME" id="6886F46E-DDEF-428D-46CA-4C1A16058874">
+<createdBy>ohmsu</createdBy>
+<createdTime>2562-11-11 13:05:48 UTC</createdTime>
+<generatorID>B834025D-5AED-AFE5-4E65-6FA161F0291A</generatorID>
+<ownerDesignName>WEBPRODB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="STUDENT_EMAIL" id="F23B2533-5E60-EC1C-1E7E-BF153FC2E946">
+<createdBy>ohmsu</createdBy>
+<createdTime>2562-11-11 13:05:48 UTC</createdTime>
+<generatorID>45CBCEA6-7E49-0DCF-5A01-D61C2315C665</generatorID>
+<ownerDesignName>WEBPRODB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="User_USER_ID" id="46476522-36E3-26B5-6352-BBB1C7827506">
+<createdBy>ohmsu</createdBy>
+<createdTime>2562-11-11 13:05:48 UTC</createdTime>
+<generatorID>4BCFFB06-58F1-CB9F-E7C5-41D8E0E2632D</generatorID>
+<ownerDesignName>WEBPRODB</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="36C8045D-7CB1-FD11-FD3E-A4647F91083B" referredColumn="16D46310-31D0-2C09-90FE-D7020398AB8C"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="6A2B3A05-DBFC-D6E8-2371-35D617AF0DEB" name="Student_PK">
+<createdBy>ohmsu</createdBy>
+<createdTime>2562-11-11 13:05:48 UTC</createdTime>
+<generatorID>6B84F8FE-EA0F-411D-8B3F-B7399E0F9A4A</generatorID>
+<ownerDesignName>WEBPRODB</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1A3B801C-C216-F74F-4475-A7F90F2096BF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3037CD5A-6685-1A6C-DA49-D17B4BB9DE14" name="Student__IDX">
+<createdBy>ohmsu</createdBy>
+<createdTime>2562-11-11 13:05:48 UTC</createdTime>
+<ownerDesignName>WEBPRODB</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>36C9CE50-5790-407D-CF1E-D98560848057</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="46476522-36E3-26B5-6352-BBB1C7827506"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="519ECFB0-BCD0-65C5-1D69-89A4BD35F959" name="Student_User_FK">
+<createdBy>ohmsu</createdBy>
+<createdTime>2562-11-11 13:05:48 UTC</createdTime>
+<generatorID>36C9CE50-5790-407D-CF1E-D98560848057</generatorID>
+<ownerDesignName>WEBPRODB</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="46476522-36E3-26B5-6352-BBB1C7827506"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

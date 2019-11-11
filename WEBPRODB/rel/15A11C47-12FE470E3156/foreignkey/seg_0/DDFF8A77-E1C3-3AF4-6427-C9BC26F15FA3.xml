@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="DDFF8A77-E1C3-3AF4-6427-C9BC26F15FA3" containerWithKeyObject="661C4632-3BA5-AB16-0D4A-E97DE3D78152" localFKIndex="1DF2B727-83ED-ACC1-8384-1D5FB34FF3B9" name="Quiz_Teacher_FK">
+<createdBy>ohmsu</createdBy>
+<createdTime>2562-11-11 13:05:48 UTC</createdTime>
+<generatorID>B7975C98-2C76-C7FC-D082-FD1DAB68CAEB</generatorID>
+<ownerDesignName>WEBPRODB</ownerDesignName>
+<referredTableLongName>Teacher</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>63C0ABB9-4D3F-6FDC-04D8-30EE9366850D</referredTableID>
+<keyObject>E3080F18-A25B-9523-1626-7EC0D1304D1C</keyObject>
+<referredKeyID>E3080F18-A25B-9523-1626-7EC0D1304D1C</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>TEACHER_ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

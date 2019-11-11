@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<LogicalDesign class="oracle.dbtools.crest.model.design.logical.LogicalDesign" name="Logical" id="340DAB2F-07B7-B212-3327-0F4B9A677A8B" mainViewID="27FFC261-A950-8CBB-D44A-02C4C78950C4">
+<createdBy>ohmsu</createdBy>
+<createdTime>2562-11-11 12:40:58 UTC</createdTime>
+<ownerDesignName>WEBPRODB</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</LogicalDesign>

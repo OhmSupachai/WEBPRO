@@ -1,0 +1,87 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="11403829-B16C-9067-B1B7-58574BCFA36C" name="Choice">
+<createdBy>ohmsu</createdBy>
+<createdTime>2562-11-11 12:59:49 UTC</createdTime>
+<ownerDesignName>WEBPRODB</ownerDesignName>
+<engineerTo>
+<item key="15A11C47-B120-B704-0A40-12FE470E3156" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="CHOICE_ID" id="87326992-A7E3-369F-CFE3-93CCF8E98B56">
+<createdBy>ohmsu</createdBy>
+<createdTime>2562-11-11 13:00:13 UTC</createdTime>
+<ownerDesignName>WEBPRODB</ownerDesignName>
+<engineerTo>
+<item key="15A11C47-B120-B704-0A40-12FE470E3156" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="CHOICE_NAME" id="EBF41441-F6E1-4AD2-27CD-170380E4E726">
+<createdBy>ohmsu</createdBy>
+<createdTime>2562-11-11 13:00:27 UTC</createdTime>
+<ownerDesignName>WEBPRODB</ownerDesignName>
+<engineerTo>
+<item key="15A11C47-B120-B704-0A40-12FE470E3156" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="CORRECT" id="92E20E4A-0319-0854-EB2A-D664160EDB73">
+<createdBy>ohmsu</createdBy>
+<createdTime>2562-11-11 13:00:56 UTC</createdTime>
+<ownerDesignName>WEBPRODB</ownerDesignName>
+<engineerTo>
+<item key="15A11C47-B120-B704-0A40-12FE470E3156" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="QUESTION_ID" id="0C74071E-13D4-2801-AEBC-D314BB8FF807">
+<createdBy>ohmsu</createdBy>
+<createdTime>2562-11-11 13:04:15 UTC</createdTime>
+<generatorID>DAD30311-B548-5BED-FE9A-209A59915C16</generatorID>
+<ownerDesignName>WEBPRODB</ownerDesignName>
+<engineerTo>
+<item key="15A11C47-B120-B704-0A40-12FE470E3156" value="true"/>
+</engineerTo>
+<referedAttribute>37263286-F736-74F7-5282-5BA67F85F321</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="76A24058-89CF-05AD-40FE-169DE370E0ED" name="Choice PK">
+<createdBy>ohmsu</createdBy>
+<createdTime>2562-11-11 13:00:24 UTC</createdTime>
+<ownerDesignName>WEBPRODB</ownerDesignName>
+<engineerTo>
+<item key="15A11C47-B120-B704-0A40-12FE470E3156" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>87326992-A7E3-369F-CFE3-93CCF8E98B56</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
