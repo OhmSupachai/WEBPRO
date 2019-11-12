@@ -49,10 +49,10 @@ public class QuestionJpaController implements Serializable {
         try {
             utx.begin();
             em = getEntityManager();
-            Quiz quizOuizId = question.getQuizOuizId();
-            if (quizOuizId != null) {
-                quizOuizId = em.getReference(quizOuizId.getClass(), quizOuizId.getOuizId());
-                question.setQuizOuizId(quizOuizId);
+            Quiz quizQuizId = question.getQuizQuizId();
+            if (quizQuizId != null) {
+                quizQuizId = em.getReference(quizQuizId.getClass(), quizQuizId.getQuizId());
+                question.setQuizQuizId(quizQuizId);
             }
             Collection<Choice> attachedChoiceCollection = new ArrayList<Choice>();
             for (Choice choiceCollectionChoiceToAttach : question.getChoiceCollection()) {
@@ -61,9 +61,9 @@ public class QuestionJpaController implements Serializable {
             }
             question.setChoiceCollection(attachedChoiceCollection);
             em.persist(question);
-            if (quizOuizId != null) {
-                quizOuizId.getQuestionCollection().add(question);
-                quizOuizId = em.merge(quizOuizId);
+            if (quizQuizId != null) {
+                quizQuizId.getQuestionCollection().add(question);
+                quizQuizId = em.merge(quizQuizId);
             }
             for (Choice choiceCollectionChoice : question.getChoiceCollection()) {
                 Question oldQuestionQuestionIdOfChoiceCollectionChoice = choiceCollectionChoice.getQuestionQuestionId();
@@ -98,8 +98,8 @@ public class QuestionJpaController implements Serializable {
             utx.begin();
             em = getEntityManager();
             Question persistentQuestion = em.find(Question.class, question.getQuestionId());
-            Quiz quizOuizIdOld = persistentQuestion.getQuizOuizId();
-            Quiz quizOuizIdNew = question.getQuizOuizId();
+            Quiz quizQuizIdOld = persistentQuestion.getQuizQuizId();
+            Quiz quizQuizIdNew = question.getQuizQuizId();
             Collection<Choice> choiceCollectionOld = persistentQuestion.getChoiceCollection();
             Collection<Choice> choiceCollectionNew = question.getChoiceCollection();
             List<String> illegalOrphanMessages = null;
@@ -114,9 +114,9 @@ public class QuestionJpaController implements Serializable {
             if (illegalOrphanMessages != null) {
                 throw new IllegalOrphanException(illegalOrphanMessages);
             }
-            if (quizOuizIdNew != null) {
-                quizOuizIdNew = em.getReference(quizOuizIdNew.getClass(), quizOuizIdNew.getOuizId());
-                question.setQuizOuizId(quizOuizIdNew);
+            if (quizQuizIdNew != null) {
+                quizQuizIdNew = em.getReference(quizQuizIdNew.getClass(), quizQuizIdNew.getQuizId());
+                question.setQuizQuizId(quizQuizIdNew);
             }
             Collection<Choice> attachedChoiceCollectionNew = new ArrayList<Choice>();
             for (Choice choiceCollectionNewChoiceToAttach : choiceCollectionNew) {
@@ -126,13 +126,13 @@ public class QuestionJpaController implements Serializable {
             choiceCollectionNew = attachedChoiceCollectionNew;
             question.setChoiceCollection(choiceCollectionNew);
             question = em.merge(question);
-            if (quizOuizIdOld != null && !quizOuizIdOld.equals(quizOuizIdNew)) {
-                quizOuizIdOld.getQuestionCollection().remove(question);
-                quizOuizIdOld = em.merge(quizOuizIdOld);
+            if (quizQuizIdOld != null && !quizQuizIdOld.equals(quizQuizIdNew)) {
+                quizQuizIdOld.getQuestionCollection().remove(question);
+                quizQuizIdOld = em.merge(quizQuizIdOld);
             }
-            if (quizOuizIdNew != null && !quizOuizIdNew.equals(quizOuizIdOld)) {
-                quizOuizIdNew.getQuestionCollection().add(question);
-                quizOuizIdNew = em.merge(quizOuizIdNew);
+            if (quizQuizIdNew != null && !quizQuizIdNew.equals(quizQuizIdOld)) {
+                quizQuizIdNew.getQuestionCollection().add(question);
+                quizQuizIdNew = em.merge(quizQuizIdNew);
             }
             for (Choice choiceCollectionNewChoice : choiceCollectionNew) {
                 if (!choiceCollectionOld.contains(choiceCollectionNewChoice)) {
@@ -190,10 +190,10 @@ public class QuestionJpaController implements Serializable {
             if (illegalOrphanMessages != null) {
                 throw new IllegalOrphanException(illegalOrphanMessages);
             }
-            Quiz quizOuizId = question.getQuizOuizId();
-            if (quizOuizId != null) {
-                quizOuizId.getQuestionCollection().remove(question);
-                quizOuizId = em.merge(quizOuizId);
+            Quiz quizQuizId = question.getQuizQuizId();
+            if (quizQuizId != null) {
+                quizQuizId.getQuestionCollection().remove(question);
+                quizQuizId = em.merge(quizQuizId);
             }
             em.remove(question);
             utx.commit();

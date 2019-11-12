@@ -32,7 +32,7 @@ import javax.xml.bind.annotation.XmlTransient;
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Quiz.findAll", query = "SELECT q FROM Quiz q")
-    , @NamedQuery(name = "Quiz.findByOuizId", query = "SELECT q FROM Quiz q WHERE q.ouizId = :ouizId")
+    , @NamedQuery(name = "Quiz.findByQuizId", query = "SELECT q FROM Quiz q WHERE q.quizId = :quizId")
     , @NamedQuery(name = "Quiz.findByQuizName", query = "SELECT q FROM Quiz q WHERE q.quizName = :quizName")})
 public class Quiz implements Serializable {
 
@@ -40,33 +40,30 @@ public class Quiz implements Serializable {
     @Id
     @Basic(optional = false)
     @NotNull
-    @Column(name = "OUIZ_ID")
-    private Integer ouizId;
+    @Column(name = "QUIZ_ID")
+    private Integer quizId;
     @Size(max = 255)
     @Column(name = "QUIZ_NAME")
     private String quizName;
-    @JoinColumn(name = "STUDENT_STUDENT_ID", referencedColumnName = "STUDENT_ID")
+    @JoinColumn(name = "USERS_USER_ID", referencedColumnName = "USER_ID")
     @ManyToOne(optional = false)
-    private Student studentStudentId;
-    @JoinColumn(name = "TEACHER_TEACHER_ID", referencedColumnName = "TEACHER_ID")
-    @ManyToOne(optional = false)
-    private Teacher teacherTeacherId;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "quizOuizId")
+    private Users usersUserId;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "quizQuizId")
     private Collection<Question> questionCollection;
 
     public Quiz() {
     }
 
-    public Quiz(Integer ouizId) {
-        this.ouizId = ouizId;
+    public Quiz(Integer quizId) {
+        this.quizId = quizId;
     }
 
-    public Integer getOuizId() {
-        return ouizId;
+    public Integer getQuizId() {
+        return quizId;
     }
 
-    public void setOuizId(Integer ouizId) {
-        this.ouizId = ouizId;
+    public void setQuizId(Integer quizId) {
+        this.quizId = quizId;
     }
 
     public String getQuizName() {
@@ -77,20 +74,12 @@ public class Quiz implements Serializable {
         this.quizName = quizName;
     }
 
-    public Student getStudentStudentId() {
-        return studentStudentId;
+    public Users getUsersUserId() {
+        return usersUserId;
     }
 
-    public void setStudentStudentId(Student studentStudentId) {
-        this.studentStudentId = studentStudentId;
-    }
-
-    public Teacher getTeacherTeacherId() {
-        return teacherTeacherId;
-    }
-
-    public void setTeacherTeacherId(Teacher teacherTeacherId) {
-        this.teacherTeacherId = teacherTeacherId;
+    public void setUsersUserId(Users usersUserId) {
+        this.usersUserId = usersUserId;
     }
 
     @XmlTransient
@@ -105,7 +94,7 @@ public class Quiz implements Serializable {
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (ouizId != null ? ouizId.hashCode() : 0);
+        hash += (quizId != null ? quizId.hashCode() : 0);
         return hash;
     }
 
@@ -116,7 +105,7 @@ public class Quiz implements Serializable {
             return false;
         }
         Quiz other = (Quiz) object;
-        if ((this.ouizId == null && other.ouizId != null) || (this.ouizId != null && !this.ouizId.equals(other.ouizId))) {
+        if ((this.quizId == null && other.quizId != null) || (this.quizId != null && !this.quizId.equals(other.quizId))) {
             return false;
         }
         return true;
@@ -124,7 +113,7 @@ public class Quiz implements Serializable {
 
     @Override
     public String toString() {
-        return "model.Quiz[ ouizId=" + ouizId + " ]";
+        return "model.Quiz[ quizId=" + quizId + " ]";
     }
     
 }

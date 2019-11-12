@@ -24,7 +24,7 @@
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
+<logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="CHOICE_NAME" id="EBF41441-F6E1-4AD2-27CD-170380E4E726">
@@ -55,9 +55,9 @@
 <dataTypeSize>1</dataTypeSize>
 <ownDataTypeParameters>1,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="QUESTION_ID" id="0C74071E-13D4-2801-AEBC-D314BB8FF807">
+<Attribute name="QUESTION_ID" id="85C2E125-B5EE-DE6D-5EF3-1920EFC6E831">
 <createdBy>ohmsu</createdBy>
-<createdTime>2562-11-11 13:04:15 UTC</createdTime>
+<createdTime>2562-11-12 12:20:35 UTC</createdTime>
 <generatorID>DAD30311-B548-5BED-FE9A-209A59915C16</generatorID>
 <ownerDesignName>WEBPRODB</ownerDesignName>
 <engineerTo>
@@ -66,7 +66,7 @@
 <referedAttribute>37263286-F736-74F7-5282-5BA67F85F321</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
+<logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>

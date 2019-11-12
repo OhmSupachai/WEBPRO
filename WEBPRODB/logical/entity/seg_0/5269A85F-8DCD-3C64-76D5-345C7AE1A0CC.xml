@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="5269A85F-8DCD-3C64-76D5-345C7AE1A0CC" name="User">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="5269A85F-8DCD-3C64-76D5-345C7AE1A0CC" name="Users">
 <createdBy>ohmsu</createdBy>
 <createdTime>2562-11-11 12:43:54 UTC</createdTime>
 <ownerDesignName>WEBPRODB</ownerDesignName>
@@ -44,6 +44,48 @@
 <Attribute name="PASSWORD" id="5FCFB669-BC4B-6E1F-C791-651DF7818B93">
 <createdBy>ohmsu</createdBy>
 <createdTime>2562-11-11 12:45:47 UTC</createdTime>
+<ownerDesignName>WEBPRODB</ownerDesignName>
+<engineerTo>
+<item key="15A11C47-B120-B704-0A40-12FE470E3156" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="USER_FULLNAME" id="3F7AF7B6-147B-6523-BD1C-33CF0C05DD03">
+<createdBy>ohmsu</createdBy>
+<createdTime>2562-11-12 12:08:59 UTC</createdTime>
+<ownerDesignName>WEBPRODB</ownerDesignName>
+<engineerTo>
+<item key="15A11C47-B120-B704-0A40-12FE470E3156" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="USER_EMAIL" id="F93D0BAA-2B8C-875A-4BBC-B87F94549CD5">
+<createdBy>ohmsu</createdBy>
+<createdTime>2562-11-12 12:07:59 UTC</createdTime>
+<ownerDesignName>WEBPRODB</ownerDesignName>
+<engineerTo>
+<item key="15A11C47-B120-B704-0A40-12FE470E3156" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="USER_TYPE" id="BF67DFCB-8478-F6EF-4B57-567C751D1C41">
+<createdBy>ohmsu</createdBy>
+<createdTime>2562-11-12 12:08:23 UTC</createdTime>
 <ownerDesignName>WEBPRODB</ownerDesignName>
 <engineerTo>
 <item key="15A11C47-B120-B704-0A40-12FE470E3156" value="true"/>

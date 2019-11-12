@@ -1,0 +1,10 @@
+insert into users (user_id, username, password, user_fullname, user_email, user_type) values (1, 'tmandres0', 'eMXyeqzXG', 'Trumaine Mandres', 'tmandres0@barnesandnoble.com', 'Teacher');
+insert into users (user_id, username, password, user_fullname, user_email, user_type) values (2, 'bhowton1', 'vZLE4mo', 'Burch Howton', 'bhowton1@craigslist.org', 'Student');
+insert into users (user_id, username, password, user_fullname, user_email, user_type) values (3, 'fsilverlock2', 'Tj1W6nb', 'Forest Silverlock', 'fsilverlock2@amazonaws.com', 'Student');
+insert into users (user_id, username, password, user_fullname, user_email, user_type) values (4, 'vfurminger3', 'k6oF5zo16h', 'Vikky Furminger', 'vfurminger3@cisco.com', 'Teacher');
+insert into users (user_id, username, password, user_fullname, user_email, user_type) values (5, 'ejerrand4', 'fjazF4I7ho', 'Eduard Jerrand', 'ejerrand4@shop-pro.jp', 'Student');
+insert into users (user_id, username, password, user_fullname, user_email, user_type) values (6, 'akerkham5', 'KmylNKM0', 'Ashlen Kerkham', 'akerkham5@youtube.com', 'Teacher');
+insert into users (user_id, username, password, user_fullname, user_email, user_type) values (7, 'vhanner6', 'P8DcV2us', 'Verge Hanner', 'vhanner6@wsj.com', 'Student');
+insert into users (user_id, username, password, user_fullname, user_email, user_type) values (8, 'gcapstaff7', 'bmsD4J676', 'Georgine Capstaff', 'gcapstaff7@adobe.com', 'Student');
+insert into users (user_id, username, password, user_fullname, user_email, user_type) values (9, 'rswadlen8', 'bsNhSyXIO', 'Ruddy Swadlen', 'rswadlen8@weibo.com', 'Student');
+insert into users (user_id, username, password, user_fullname, user_email, user_type) values (10, 'ijakuszewski9', 'RShvtNLSBK2', 'Inge Jakuszewski', 'ijakuszewski9@desdev.cn', 'Student');

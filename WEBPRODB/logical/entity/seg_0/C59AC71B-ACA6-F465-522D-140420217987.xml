@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="CE0BB0BF-D56A-D88C-6138-AEC7C123ED32" name="Student">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="C59AC71B-ACA6-F465-522D-140420217987" name="Quiz">
 <createdBy>ohmsu</createdBy>
-<createdTime>2562-11-11 12:46:11 UTC</createdTime>
+<createdTime>2562-11-12 12:12:01 UTC</createdTime>
 <ownerDesignName>WEBPRODB</ownerDesignName>
 <engineerTo>
 <item key="15A11C47-B120-B704-0A40-12FE470E3156" value="true"/>
@@ -15,35 +15,21 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="STUDENT_ID" id="AA37F35F-28F5-543E-FBD5-BD8BC8DA427F">
+<Attribute name="QUIZ_ID" id="CC6B8E29-A5C7-0D8E-8D80-3EE0C6A08F22">
 <createdBy>ohmsu</createdBy>
-<createdTime>2562-11-11 12:46:23 UTC</createdTime>
+<createdTime>2562-11-12 12:12:08 UTC</createdTime>
 <ownerDesignName>WEBPRODB</ownerDesignName>
 <engineerTo>
 <item key="15A11C47-B120-B704-0A40-12FE470E3156" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
+<logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="STUDENT_NAME" id="B834025D-5AED-AFE5-4E65-6FA161F0291A">
+<Attribute name="QUIZ_NAME" id="9B3A0DB3-E25A-3CF1-E399-C554907FFD0C">
 <createdBy>ohmsu</createdBy>
-<createdTime>2562-11-11 12:46:53 UTC</createdTime>
-<ownerDesignName>WEBPRODB</ownerDesignName>
-<engineerTo>
-<item key="15A11C47-B120-B704-0A40-12FE470E3156" value="true"/>
-</engineerTo>
-<nullsAllowed>true</nullsAllowed>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>100</dataTypeSize>
-<ownDataTypeParameters>100,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="STUDENT_EMAIL" id="45CBCEA6-7E49-0DCF-5A01-D61C2315C665">
-<createdBy>ohmsu</createdBy>
-<createdTime>2562-11-11 12:49:42 UTC</createdTime>
+<createdTime>2562-11-12 12:12:24 UTC</createdTime>
 <ownerDesignName>WEBPRODB</ownerDesignName>
 <engineerTo>
 <item key="15A11C47-B120-B704-0A40-12FE470E3156" value="true"/>
@@ -55,10 +41,10 @@
 <dataTypeSize>255</dataTypeSize>
 <ownDataTypeParameters>255,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="USER_ID" id="4BCFFB06-58F1-CB9F-E7C5-41D8E0E2632D">
+<Attribute name="USER_ID" id="6A55E529-D2EF-852C-A13C-DB137791808C">
 <createdBy>ohmsu</createdBy>
-<createdTime>2562-11-11 13:02:16 UTC</createdTime>
-<generatorID>36C9CE50-5790-407D-CF1E-D98560848057</generatorID>
+<createdTime>2562-11-12 12:13:03 UTC</createdTime>
+<generatorID>8955734C-9AC3-4F2C-8BC5-932CA0C7E238</generatorID>
 <ownerDesignName>WEBPRODB</ownerDesignName>
 <engineerTo>
 <item key="15A11C47-B120-B704-0A40-12FE470E3156" value="true"/>
@@ -71,16 +57,16 @@
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="6B84F8FE-EA0F-411D-8B3F-B7399E0F9A4A" name="Student PK">
+<identifier id="C62A4FEE-1EAC-3730-2F5C-12784A6E6433" name="Quiz PK">
 <createdBy>ohmsu</createdBy>
-<createdTime>2562-11-11 12:46:46 UTC</createdTime>
+<createdTime>2562-11-12 12:12:17 UTC</createdTime>
 <ownerDesignName>WEBPRODB</ownerDesignName>
 <engineerTo>
 <item key="15A11C47-B120-B704-0A40-12FE470E3156" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
-<attributeRef>AA37F35F-28F5-543E-FBD5-BD8BC8DA427F</attributeRef>
+<attributeRef>CC6B8E29-A5C7-0D8E-8D80-3EE0C6A08F22</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

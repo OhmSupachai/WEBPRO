@@ -1,0 +1,102 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="4715E5B4-60CB-28EE-B655-BC85F4A8697B" name="Users">
+<createdBy>ohmsu</createdBy>
+<createdTime>2562-11-12 12:22:18 UTC</createdTime>
+<generatorID>5269A85F-8DCD-3C64-76D5-345C7AE1A0CC</generatorID>
+<ownerDesignName>WEBPRODB</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="USER_ID" id="856A9D1B-6F37-3A1A-D1AF-7861D58DD70F">
+<createdBy>ohmsu</createdBy>
+<createdTime>2562-11-12 12:22:18 UTC</createdTime>
+<generatorID>BFFB5CA3-63C2-D092-81E2-C4F7F54D6E67</generatorID>
+<ownerDesignName>WEBPRODB</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="USERNAME" id="BA781486-01E1-1363-1370-9FDC99E2991D">
+<createdBy>ohmsu</createdBy>
+<createdTime>2562-11-12 12:22:18 UTC</createdTime>
+<generatorID>B64F4C9F-5B90-8D9E-ACFA-A9253F48179D</generatorID>
+<ownerDesignName>WEBPRODB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PASSWORD" id="16F6551E-9C81-C929-0F16-517E31D8B553">
+<createdBy>ohmsu</createdBy>
+<createdTime>2562-11-12 12:22:18 UTC</createdTime>
+<generatorID>5FCFB669-BC4B-6E1F-C791-651DF7818B93</generatorID>
+<ownerDesignName>WEBPRODB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="USER_FULLNAME" id="9C8AA99A-C9AA-9F79-63EC-880CFC863717">
+<createdBy>ohmsu</createdBy>
+<createdTime>2562-11-12 12:22:18 UTC</createdTime>
+<generatorID>3F7AF7B6-147B-6523-BD1C-33CF0C05DD03</generatorID>
+<ownerDesignName>WEBPRODB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="USER_EMAIL" id="D2BCCA83-BAB4-78F6-EF96-BB99C7709AE3">
+<createdBy>ohmsu</createdBy>
+<createdTime>2562-11-12 12:22:18 UTC</createdTime>
+<generatorID>F93D0BAA-2B8C-875A-4BBC-B87F94549CD5</generatorID>
+<ownerDesignName>WEBPRODB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="USER_TYPE" id="B49D387A-21B0-39DC-C855-5FA6DF65AC17">
+<createdBy>ohmsu</createdBy>
+<createdTime>2562-11-12 12:22:18 UTC</createdTime>
+<generatorID>BF67DFCB-8478-F6EF-4B57-567C751D1C41</generatorID>
+<ownerDesignName>WEBPRODB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="E86A75F5-42B9-4D5F-5A54-D8211A930CCE" name="Users_PK">
+<createdBy>ohmsu</createdBy>
+<createdTime>2562-11-12 12:22:18 UTC</createdTime>
+<generatorID>137A03B4-F95B-FFBD-91EB-663C890F5AAD</generatorID>
+<ownerDesignName>WEBPRODB</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="856A9D1B-6F37-3A1A-D1AF-7861D58DD70F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

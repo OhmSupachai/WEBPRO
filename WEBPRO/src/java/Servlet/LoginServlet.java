@@ -5,6 +5,7 @@
  */
 package Servlet;
 
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.annotation.Resource;
@@ -16,11 +17,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.transaction.UserTransaction;
-import model.Teacher;
-import model.User;
-import Controller.UserJpaController;
+
+import model.Users;
+import Controller.UsersJpaController;
 import java.util.List;
 import javax.servlet.http.HttpSession;
+
+
 
 /**
  *
@@ -50,21 +53,22 @@ public class LoginServlet extends HttpServlet {
 
         String username = request.getParameter("user");
         String password = request.getParameter("pass");
-        UserJpaController ujc = new UserJpaController(utx, emf);
-        List<User> users = ujc.findUserEntities();
+        UsersJpaController ujc = new UsersJpaController(utx, emf);
+        List<Users> users = ujc.findUsersEntities();
         if (username.isEmpty() || password.isEmpty()) {
             request.setAttribute("message", "ใส่ไม่ครบ");
             getServletContext().getRequestDispatcher("/WEB-INF/view/Login.jsp").forward(request, response);
 
-        }
-        for (User user : users) {
+        }else{
+        for (Users user : users) {
             if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
                 HttpSession session = request.getSession();
                 session.setAttribute("user", user);
-                getServletContext().getRequestDispatcher("/WEB-INF/view/Quiz.jsp").forward(request, response);
+                getServletContext().getRequestDispatcher("/WEB-INF/view/Homepage.jsp").forward(request, response);
                 return;
             }
 
+        }
         }
         request.setAttribute("message", "Invalid");
         getServletContext().getRequestDispatcher("/WEB-INF/view/Login.jsp").forward(request, response);
@@ -110,4 +114,5 @@ public class LoginServlet extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 
+    
 }

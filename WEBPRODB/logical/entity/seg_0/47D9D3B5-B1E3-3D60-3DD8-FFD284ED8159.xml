@@ -24,7 +24,7 @@
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
+<logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="QUESTION_NAME" id="9AA09189-0CB0-FF47-2485-D1B05523BDF0">
@@ -41,18 +41,18 @@
 <dataTypeSize>255</dataTypeSize>
 <ownDataTypeParameters>255,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="OUIZ_ID" id="FE161599-6A20-61ED-B3C4-A50F9AC21836">
+<Attribute name="QUIZ_ID" id="675CC548-2890-7778-2DB1-9DB898D0A8DD">
 <createdBy>ohmsu</createdBy>
-<createdTime>2562-11-11 13:04:09 UTC</createdTime>
-<generatorID>216FD82E-4D44-3F4D-E207-5D028C831F09</generatorID>
+<createdTime>2562-11-12 12:13:09 UTC</createdTime>
+<generatorID>F4FC4F62-3BB9-3472-BC56-A9A1F8DEA933</generatorID>
 <ownerDesignName>WEBPRODB</ownerDesignName>
 <engineerTo>
 <item key="15A11C47-B120-B704-0A40-12FE470E3156" value="true"/>
 </engineerTo>
-<referedAttribute>9B3938E3-9C39-778C-3441-BDE85A5BB761</referedAttribute>
+<referedAttribute>CC6B8E29-A5C7-0D8E-8D80-3EE0C6A08F22</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
+<logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>

@@ -47,9 +47,9 @@ public class Question implements Serializable {
     private String questionName;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "questionQuestionId")
     private Collection<Choice> choiceCollection;
-    @JoinColumn(name = "QUIZ_OUIZ_ID", referencedColumnName = "OUIZ_ID")
+    @JoinColumn(name = "QUIZ_QUIZ_ID", referencedColumnName = "QUIZ_ID")
     @ManyToOne(optional = false)
-    private Quiz quizOuizId;
+    private Quiz quizQuizId;
 
     public Question() {
     }
@@ -83,12 +83,12 @@ public class Question implements Serializable {
         this.choiceCollection = choiceCollection;
     }
 
-    public Quiz getQuizOuizId() {
-        return quizOuizId;
+    public Quiz getQuizQuizId() {
+        return quizQuizId;
     }
 
-    public void setQuizOuizId(Quiz quizOuizId) {
-        this.quizOuizId = quizOuizId;
+    public void setQuizQuizId(Quiz quizQuizId) {
+        this.quizQuizId = quizQuizId;
     }
 
     @Override
