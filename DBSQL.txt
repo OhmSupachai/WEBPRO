@@ -6,7 +6,7 @@
 
 
 CREATE TABLE choice (
-    choice_id              INTEGER NOT NULL,
+    choice_id              INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1,
     choice_name            VARCHAR(255),
     correct                CHAR(1),
     question_question_id   INTEGER NOT NULL
@@ -15,7 +15,7 @@ CREATE TABLE choice (
 ALTER TABLE choice ADD CONSTRAINT choice_pk PRIMARY KEY ( choice_id );
 
 CREATE TABLE question (
-    question_id     INTEGER NOT NULL,
+    question_id     INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1,
     question_name   VARCHAR(255),
     quiz_quiz_id    INTEGER NOT NULL
 );
@@ -23,7 +23,7 @@ CREATE TABLE question (
 ALTER TABLE question ADD CONSTRAINT question_pk PRIMARY KEY ( question_id );
 
 CREATE TABLE quiz (
-    quiz_id         INTEGER NOT NULL,
+    quiz_id         INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1,
     quiz_name       VARCHAR(255),
     users_user_id   INTEGER NOT NULL
 );
@@ -31,7 +31,7 @@ CREATE TABLE quiz (
 ALTER TABLE quiz ADD CONSTRAINT quiz_pk PRIMARY KEY ( quiz_id );
 
 CREATE TABLE users (
-    user_id         INTEGER NOT NULL,
+    user_id         INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1),
     username        VARCHAR(50),
     password        VARCHAR(50),
     user_fullname   VARCHAR(100),
