@@ -54,21 +54,33 @@ public class RegisterServlet extends HttpServlet {
         String type = request.getParameter("type");
 
         UsersJpaController ujc = new UsersJpaController(utx, emf);
-        
+        List<Users> user = ujc.findUsersEntities();
 
         if (username.isEmpty() || password.isEmpty() || fullname.isEmpty() || email.isEmpty() || type.isEmpty()
                 || confirmedpass.isEmpty() || !password.equals(confirmedpass)) {
             request.setAttribute("message", "Not completed");
             getServletContext().getRequestDispatcher("/WEB-INF/view/Register.jsp").forward(request, response);
         }
-        Users u = new Users(null,username, password, fullname, email, type,null);
+        Users u = new Users();
         if (u == null) {
             request.setAttribute("message", "Not completed");
             getServletContext().getRequestDispatcher("/WEB-INF/view/Register.jsp").forward(request, response);
         }
-        ujc.create(u);
-        
-        getServletContext().getRequestDispatcher("/WEB-IMF/view/Login.jsp").forward(request, response);
+        if (password.equals(confirmedpass)) {
+            u.setUserId(ujc.getUsersCount() + 1);
+            u.setUsername(username);
+            u.setPassword(password);
+            u.setQuizCollection(null);
+            u.setUserEmail(email);
+            u.setUserType(type);
+            u.setUserFullname(fullname);
+
+            ujc.create(u);
+            getServletContext().getRequestDispatcher("/WEB-INF/view/Login.jsp").forward(request, response);
+        } else {
+            request.setAttribute("message", "Password is not equals");
+            getServletContext().getRequestDispatcher("/WEB-INF/view/Register.jsp").forward(request, response);
+        }
 
     }
 
@@ -102,13 +114,13 @@ public class RegisterServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
         try {
             processRequest(request, response);
         } catch (Exception ex) {
             Logger.getLogger(RegisterServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
     }
 
     /**
@@ -120,7 +132,5 @@ public class RegisterServlet extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
-    
 
 }

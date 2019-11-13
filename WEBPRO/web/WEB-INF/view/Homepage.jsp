@@ -13,7 +13,7 @@
     </head>
     <body>
         <h1>Home Page</h1>
-        ${user.getUserFullname()} ${user.getUserType()}
+        <h2>${user.getUserFullname()} ${user.getUserType()}</h2>
         
     </body>
 </html>

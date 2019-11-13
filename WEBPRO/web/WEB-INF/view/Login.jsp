@@ -13,6 +13,7 @@
     </head>
     <body>
         <h1>Hello World!</h1>
+        <h2>${message}</h2>
         <form action="Login" method="post">
             Username:<input type="text" name="user"><br>
             Password:<input type="password" name="pass"><br>
