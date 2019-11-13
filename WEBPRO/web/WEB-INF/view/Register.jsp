@@ -13,7 +13,11 @@
     </head>
     <body>
         <h1>Register</h1>
+<<<<<<< HEAD
         <h2>${message}</h2>
+=======
+        ${message}<br>
+>>>>>>> master
         <form action="Register" method="post">
             Username:<input type="text" name="username"><br>
             Password:<input type="password"name="password"><br>

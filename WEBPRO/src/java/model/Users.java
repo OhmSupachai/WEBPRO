@@ -65,14 +65,21 @@ public class Users implements Serializable {
     public Users() {
     }
 
+<<<<<<< HEAD
     public Users(Integer userId, String username, String password, String userFullname, String userEmail, String userType, Collection<Quiz> quizCollection) {
         this.userId = userId;
+=======
+    public Users(String username, String password, String userFullname, String userEmail, String userType) {
+>>>>>>> master
         this.username = username;
         this.password = password;
         this.userFullname = userFullname;
         this.userEmail = userEmail;
         this.userType = userType;
+<<<<<<< HEAD
         this.quizCollection = quizCollection;
+=======
+>>>>>>> master
     }
     
     public Users(Integer userId) {
@@ -160,5 +167,6 @@ public class Users implements Serializable {
     public String toString() {
         return "model.Users[ userId=" + userId + " ]";
     }
+    
     
 }

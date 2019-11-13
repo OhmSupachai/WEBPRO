@@ -61,6 +61,7 @@ public class RegisterServlet extends HttpServlet {
             request.setAttribute("message", "Not completed");
             getServletContext().getRequestDispatcher("/WEB-INF/view/Register.jsp").forward(request, response);
         }
+<<<<<<< HEAD
         Users u = new Users();
         if (u == null) {
             request.setAttribute("message", "Not completed");
@@ -81,6 +82,16 @@ public class RegisterServlet extends HttpServlet {
             request.setAttribute("message", "Password is not equals");
             getServletContext().getRequestDispatcher("/WEB-INF/view/Register.jsp").forward(request, response);
         }
+=======
+        Users u = new Users(username, password, fullname, email, type);
+        if (u == null) {
+            request.setAttribute("message", "Not completed");
+            getServletContext().getRequestDispatcher("/WEB-INF/view/Register.jsp").forward(request, response);
+        }
+        ujc.create(u);
+
+        getServletContext().getRequestDispatcher("/WEB-IMF/view/Login.jsp").forward(request, response);
+>>>>>>> master
 
     }
 
@@ -114,13 +125,19 @@ public class RegisterServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
         try {
             processRequest(request, response);
         } catch (Exception ex) {
             Logger.getLogger(RegisterServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
     }
 
     /**
@@ -132,5 +149,9 @@ public class RegisterServlet extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
+
+    public static void main(String[] args) {
+
+    }
 
 }
