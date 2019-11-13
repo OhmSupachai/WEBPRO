@@ -65,6 +65,14 @@ public class Users implements Serializable {
     public Users() {
     }
 
+    public Users(String username, String password, String userFullname, String userEmail, String userType) {
+        this.username = username;
+        this.password = password;
+        this.userFullname = userFullname;
+        this.userEmail = userEmail;
+        this.userType = userType;
+    }
+    
     public Users(Integer userId) {
         this.userId = userId;
     }
@@ -150,5 +158,6 @@ public class Users implements Serializable {
     public String toString() {
         return "model.Users[ userId=" + userId + " ]";
     }
+    
     
 }
