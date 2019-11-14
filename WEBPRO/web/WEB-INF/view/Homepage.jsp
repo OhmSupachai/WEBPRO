@@ -4,6 +4,7 @@
     Author     : ohmsu
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -14,6 +15,12 @@
     <body>
         <h1>Home Page</h1>
         <h2>${user.getUserFullname()} ${user.getUserType()}</h2>
+        <ol>
+        <c:forEach items="${quiz}" var="i">
+            <li><a href="Quiz">${i.getQuizName()}</a><br></li>
+        </c:forEach>
+            </ol>
+            
         
     </body>
 </html>
