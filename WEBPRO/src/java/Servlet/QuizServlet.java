@@ -92,11 +92,11 @@ public class QuizServlet extends HttpServlet {
         List<Choice> choice = cjc.findChoiceEntities();
         QuizJpaController qjc = new QuizJpaController(utx, emf);
         
-        HashMap<Question, List<Choice>> hm = new HashMap<>();
+        HashMap<List<Question>, List<Choice>> hm = new HashMap<>();
         for (Question q : question) {
             for (Choice c : choice) {
-                if (c.getChoiceId().equals(q.getQuestionId())) {
-                   hm.put(q, choice); 
+                if (q.getQuestionId().equals(c.getChoiceId())) {
+                   hm.put(question, choice); 
                    request.setAttribute("hm", hm);
                     getServletContext().getRequestDispatcher("/WEB-INF/view/Quiz.jsp").forward(request, response);
                     return;

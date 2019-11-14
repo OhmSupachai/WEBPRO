@@ -95,7 +95,9 @@ public class LoginServlet extends HttpServlet {
         if (user == null) {
             getServletContext().getRequestDispatcher("/WEB-INF/view/Login.jsp").forward(request, response);
         }
-        
+        QuizJpaController qjc = new QuizJpaController(utx, emf);
+                    List<Quiz> quiz = qjc.findQuizEntities();
+                    request.setAttribute("quiz", quiz);
         getServletContext().getRequestDispatcher("/WEB-INF/view/Homepage.jsp").forward(request, response);
 
     }
