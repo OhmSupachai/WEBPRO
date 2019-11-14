@@ -5,10 +5,14 @@
  */
 package Servlet;
 
+import Controller.ChoiceJpaController;
+import Controller.QuestionJpaController;
 import Controller.QuizJpaController;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.HashMap;
 import java.util.List;
+import javafx.print.Collation;
 import javax.annotation.Resource;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.PersistenceUnit;
@@ -18,14 +22,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.transaction.UserTransaction;
+import model.Choice;
+import model.Question;
+import model.Question_;
 import model.Quiz;
 import model.Users;
+import sun.text.resources.CollationData;
 
 /**
  *
  * @author ohmsu
  */
 public class QuizServlet extends HttpServlet {
+
     @PersistenceUnit(unitName = "WEBPROPU")
     EntityManagerFactory emf;
 
@@ -44,19 +53,21 @@ public class QuizServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-       HttpSession session = request.getSession();
-       Users user = (Users) session.getAttribute("user");
+        HttpSession session = request.getSession();
+        Users user = (Users) session.getAttribute("user");
         QuizJpaController qjc = new QuizJpaController(utx, emf);
         List<Quiz> quiz = qjc.findQuizEntities();
-        
+        QuestionJpaController qujc = new QuestionJpaController(utx, emf);
+        List<Question> question = qujc.findQuestionEntities();
+        ChoiceJpaController cjc = new ChoiceJpaController(utx, emf);
+        List<Choice> choice = cjc.findChoiceEntities();
         for (Quiz q : quiz) {
-            q = qjc.findQuiz(Integer.SIZE);
             q.getQuestionCollection();
-            request.setAttribute("q", q);
+
             getServletContext().getRequestDispatcher("/WEB-INF/view/Quiz.jsp").forward(request, response);
             return;
         }
-        
+
         request.setAttribute("quiz", quiz);
         getServletContext().getRequestDispatcher("/WEB-INF/view/Quiz.jsp").forward(request, response);
     }
@@ -73,12 +84,29 @@ public class QuizServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        HttpSession session = request.getSession();
-       Users user = (Users) session.getAttribute("user");
+        int id = Integer.parseInt(request.getParameter("id"));
+
+        QuestionJpaController qujc = new QuestionJpaController(utx, emf);
+        List<Question> question = qujc.findQuestionEntities();
+        ChoiceJpaController cjc = new ChoiceJpaController(utx, emf);
+        List<Choice> choice = cjc.findChoiceEntities();
         QuizJpaController qjc = new QuizJpaController(utx, emf);
-        List<Quiz> quiz = qjc.findQuizEntities();
-        request.setAttribute("quiz", quiz);
-        getServletContext().getRequestDispatcher("/WEB-INF/view/Homepage.jsp").forward(request, response);
+        
+        HashMap<Question, List<Choice>> hm = new HashMap<>();
+        for (Question q : question) {
+            for (Choice c : choice) {
+                if (c.getChoiceId().equals(q.getQuestionId())) {
+                   hm.put(q, choice);  
+                }
+                
+            }
+           
+            
+
+        }
+        request.setAttribute("hm", hm);
+
+        getServletContext().getRequestDispatcher("/WEB-INF/view/Quiz.jsp").forward(request, response);
     }
 
     /**

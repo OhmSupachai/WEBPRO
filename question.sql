@@ -1,0 +1,10 @@
+insert into question (question_id, question_name, quiz_quiz_id) values (1, 'Garland', 1);
+insert into question (question_id, question_name, quiz_quiz_id) values (2, 'Yabrūd', 1);
+insert into question (question_id, question_name, quiz_quiz_id) values (3, 'Shizuishan', 1);
+insert into question (question_id, question_name, quiz_quiz_id) values (4, 'Pereyaslav-Khmel’nyts’kyy', 1);
+insert into question (question_id, question_name, quiz_quiz_id) values (5, 'Gangbian', 1);
+insert into question (question_id, question_name, quiz_quiz_id) values (6, 'Boca de Parita', 1);
+insert into question (question_id, question_name, quiz_quiz_id) values (7, 'Yongfeng', 1);
+insert into question (question_id, question_name, quiz_quiz_id) values (8, 'Weizhou', 1);
+insert into question (question_id, question_name, quiz_quiz_id) values (9, 'Guinsadan', 1);
+insert into question (question_id, question_name, quiz_quiz_id) values (10, 'Managua', 1);

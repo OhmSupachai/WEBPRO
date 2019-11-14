@@ -1,6 +1,6 @@
 <%-- 
-    Document   : Homepage
-    Created on : Nov 12, 2019, 5:38:37 PM
+    Document   : Quiz
+    Created on : Nov 14, 2019, 7:04:07 PM
     Author     : ohmsu
 --%>
 
@@ -13,14 +13,9 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Home Page</h1>
-        <h2>${user.getUserFullname()} ${user.getUserType()}</h2>
-        <ol>
-        <c:forEach items="${quiz}" var="i">
-            <li><a href="Quiz?id=${i.getQuizId()}">${i.getQuizName()}</a><br></li>
+        <h1>Hello World!</h1>
+        <c:forEach items="${hm}" var="i">
+            ${i}<br>
         </c:forEach>
-            </ol>
-            
-        
     </body>
 </html>

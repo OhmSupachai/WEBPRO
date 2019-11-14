@@ -5,7 +5,7 @@
  */
 package Servlet;
 
-
+import Controller.QuizJpaController;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.annotation.Resource;
@@ -22,8 +22,7 @@ import model.Users;
 import Controller.UsersJpaController;
 import java.util.List;
 import javax.servlet.http.HttpSession;
-
-
+import model.Quiz;
 
 /**
  *
@@ -59,16 +58,19 @@ public class LoginServlet extends HttpServlet {
             request.setAttribute("message", "ใส่ไม่ครบ");
             getServletContext().getRequestDispatcher("/WEB-INF/view/Login.jsp").forward(request, response);
 
-        }else{
-        for (Users user : users) {
-            if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
-                HttpSession session = request.getSession();
-                session.setAttribute("user", user);
-                getServletContext().getRequestDispatcher("/WEB-INF/view/Homepage.jsp").forward(request, response);
-                return;
-            }
+        } else {
+            for (Users user : users) {
+                if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
+                    HttpSession session = request.getSession();
+                    session.setAttribute("user", user);
+                    QuizJpaController qjc = new QuizJpaController(utx, emf);
+                    List<Quiz> quiz = qjc.findQuizEntities();
+                    request.setAttribute("quiz", quiz);
+                    getServletContext().getRequestDispatcher("/WEB-INF/view/Homepage.jsp").forward(request, response);
+                    return;
+                }
 
-        }
+            }
         }
         request.setAttribute("message", "Invalid");
         getServletContext().getRequestDispatcher("/WEB-INF/view/Login.jsp").forward(request, response);
@@ -87,7 +89,15 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        getServletContext().getRequestDispatcher("/WEB-INF/view/Login.jsp").forward(request, response);
+        HttpSession session = request.getSession();
+        Users user = (Users) session.getAttribute("user");
+
+        if (user == null) {
+            getServletContext().getRequestDispatcher("/WEB-INF/view/Login.jsp").forward(request, response);
+        }
+        
+        getServletContext().getRequestDispatcher("/WEB-INF/view/Homepage.jsp").forward(request, response);
+
     }
 
     /**
@@ -114,5 +124,4 @@ public class LoginServlet extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 
-    
 }
