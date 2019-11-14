@@ -14,8 +14,6 @@
     </head>
     <body>
         <h1>Hello World!</h1>
-        <c:forEach items="${hm}" var="i">
-            ${i}<br>
-        </c:forEach>
+        ${hm}
     </body>
 </html>

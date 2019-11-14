@@ -96,7 +96,10 @@ public class QuizServlet extends HttpServlet {
         for (Question q : question) {
             for (Choice c : choice) {
                 if (c.getChoiceId().equals(q.getQuestionId())) {
-                   hm.put(q, choice);  
+                   hm.put(q, choice); 
+                   request.setAttribute("hm", hm);
+                    getServletContext().getRequestDispatcher("/WEB-INF/view/Quiz.jsp").forward(request, response);
+                    return;
                 }
                 
             }
@@ -104,9 +107,9 @@ public class QuizServlet extends HttpServlet {
             
 
         }
-        request.setAttribute("hm", hm);
-
-        getServletContext().getRequestDispatcher("/WEB-INF/view/Quiz.jsp").forward(request, response);
+       
+getServletContext().getRequestDispatcher("/WEB-INF/view/Quiz.jsp").forward(request, response);
+        
     }
 
     /**
