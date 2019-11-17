@@ -12,8 +12,11 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Collection;
+import java.util.Iterator;
 import javafx.print.Collation;
 import javax.annotation.Resource;
+import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.PersistenceUnit;
 import javax.servlet.ServletException;
@@ -85,31 +88,32 @@ public class QuizServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
-
+        EntityManager em = emf.createEntityManager();
         QuestionJpaController qujc = new QuestionJpaController(utx, emf);
         List<Question> question = qujc.findQuestionEntities();
         ChoiceJpaController cjc = new ChoiceJpaController(utx, emf);
         List<Choice> choice = cjc.findChoiceEntities();
         QuizJpaController qjc = new QuizJpaController(utx, emf);
+        Quiz quiz = em.find(Quiz.class, id);
         
-        HashMap<List<Question>, List<Choice>> hm = new HashMap<>();
-        for (Question q : question) {
-            for (Choice c : choice) {
-                if (q.getQuestionId().equals(c.getChoiceId())) {
-                   hm.put(question, choice); 
-                   request.setAttribute("hm", hm);
-                    getServletContext().getRequestDispatcher("/WEB-INF/view/Quiz.jsp").forward(request, response);
-                    return;
-                }
-                
-            }
+        
+        Collection<Question> quizcollation = quiz.getQuestionCollection();
+        Collection<Choice> qc = null;
+         
+        Iterator<Question> iterator = quizcollation.iterator();
+        for (Question q : question ) {
            
+                Question qu = em.find(Question.class, q.getQuestionId());
+                qc = qu.getChoiceCollection();
+                request.setAttribute("qc", qc);
+                                       
             
-
         }
-       
-getServletContext().getRequestDispatcher("/WEB-INF/view/Quiz.jsp").forward(request, response);
         
+       
+        request.setAttribute("c", quizcollation);
+        getServletContext().getRequestDispatcher("/WEB-INF/view/Quiz.jsp").forward(request, response);
+
     }
 
     /**
