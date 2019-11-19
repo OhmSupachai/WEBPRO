@@ -14,7 +14,13 @@
     </head>
     <body>
         <h1>Hello World!</h1>
-        ${qc}
+        <ol>
+        <c:forEach items="${q}" var="i">
+            
+                <li>${i.getQuestionName()}<br></li>
+            
+        </c:forEach>
+            </ol>
         
     </body>
 </html>

@@ -95,25 +95,16 @@ public class QuizServlet extends HttpServlet {
         List<Choice> choice = cjc.findChoiceEntities();
         QuizJpaController qjc = new QuizJpaController(utx, emf);
         Quiz quiz = em.find(Quiz.class, id);
-        
-        
+        Question q = em.find(Question.class,quiz.getQuizId());
+
         Collection<Question> quizcollation = quiz.getQuestionCollection();
-        Collection<Choice> qc = null;
+        Collection<Choice> qc = q.getChoiceCollection();
          
         Iterator<Question> iterator = quizcollation.iterator();
-        for (Question q : question ) {
-           
-                Question qu = em.find(Question.class, q.getQuestionId());
-                qc = qu.getChoiceCollection();
-                request.setAttribute("qc", qc);
-                                       
-            
-        }
-        
-       
-        request.setAttribute("c", quizcollation);
+        request.setAttribute("qc", qc);
+        request.setAttribute("q", quizcollation);
         getServletContext().getRequestDispatcher("/WEB-INF/view/Quiz.jsp").forward(request, response);
-
+        
     }
 
     /**

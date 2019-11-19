@@ -4,7 +4,6 @@
     Author     : Admin
 --%>
 
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -23,7 +22,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-4" align="Right">
-                    <h3 style="color:blue;font-family:courier;font-weight: bold;" align="center">Welcome : ${user.getUserFullname()}</h3>
+                    <h3 style="color:blue;font-family:courier;font-weight: bold;" align="center">Welcome : ${user}</h3>
                 </div>
                 <div class="col-md-4">
                 </div>
@@ -78,15 +77,36 @@
                             </tr>
                         </thead>
                         <tbody>
-                           <c:forEach items="${quiz}" var="i">
-                            <tr class="table-active">
-                                <td>${i.getQuizId()}</td>
-                                <td>${i.getQuizName()}</td>                                
-                                                            
-                                <td><a href="Quiz">Do Test</a></td>                                                          
+                            <tr>
+                                <td>1</td>
+                                <td>Science</td>                                
+                                <td>John</td>                              
+                                <td><a href="ScienceTest">Do Test</a></td>                                                          
                             </tr>
-                           </c:forEach>
-                            
+                            <tr class="table-active">
+                                <td>2</td>                                                           
+                                <td>Math</td>                            
+                                <td>Henrik</td>                                                            
+                                <td><a href="MathTest">Do Test</a></td>                                                          
+                            </tr>
+                            <tr class="table-success">
+                                <td>3</td>                                                         
+                                <td>English</td>                                                          
+                                <td>George</td>                                                           
+                                <td><a href="EnglishTest">Do Test</a></td>                                                          
+                            </tr>
+                            <tr class="table-warning">
+                                <td>4</td>                                                          
+                                <td>Social</td>                                                           
+                                <td>Victor</td>                                                          
+                                <td><a href="SocialTest">Do Test</a></td>                                                        
+                            </tr>
+                            <tr class="table-danger">
+                                <td>5</td>                                                          
+                                <td>Thai</td>                                                          
+                                <td>Somchai</td>                                                         
+                                <td><a href="ThaiTest">Do Test</a> </td>                                                           
+                            </tr>
                         </tbody>
                     </table>
                 </div>
