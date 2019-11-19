@@ -89,20 +89,21 @@ public class QuizServlet extends HttpServlet {
             throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
         EntityManager em = emf.createEntityManager();
-        QuestionJpaController qujc = new QuestionJpaController(utx, emf);
-        List<Question> question = qujc.findQuestionEntities();
-        ChoiceJpaController cjc = new ChoiceJpaController(utx, emf);
-        List<Choice> choice = cjc.findChoiceEntities();
-        QuizJpaController qjc = new QuizJpaController(utx, emf);
+//        QuestionJpaController qujc = new QuestionJpaController(utx, emf);
+//        List<Question> question = qujc.findQuestionEntities();
+//        ChoiceJpaController cjc = new ChoiceJpaController(utx, emf);
+//        List<Choice> choice = cjc.findChoiceEntities();
+//        QuizJpaController qjc = new QuizJpaController(utx, emf);
         Quiz quiz = em.find(Quiz.class, id);
-        Question q = em.find(Question.class,quiz.getQuizId());
+        
 
-        Collection<Question> quizcollation = quiz.getQuestionCollection();
-        Collection<Choice> qc = q.getChoiceCollection();
-         
-        Iterator<Question> iterator = quizcollation.iterator();
-        request.setAttribute("qc", qc);
-        request.setAttribute("q", quizcollation);
+        Collection<Question> quizcollection = quiz.getQuestionCollection();
+        
+        //System.out.println(quiz.toString());
+       // System.out.println(qc.toString());
+        
+        request.setAttribute("q",quizcollection);
+        
         getServletContext().getRequestDispatcher("/WEB-INF/view/Quiz.jsp").forward(request, response);
         
     }

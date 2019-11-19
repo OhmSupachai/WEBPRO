@@ -15,10 +15,11 @@
     <body>
         <h1>Hello World!</h1>
         <ol>
-        <c:forEach items="${q}" var="i">
-            
-                <li>${i.getQuestionName()}<br></li>
-            
+        <c:forEach items="${q}" var="i" varStatus="vs">
+                ${vs.count}${i.getQuestionName()}<br>
+                <c:forEach items="${i.getChoiceCollection()}" var="choice" varStatus="cvs">
+                    choice(${cvs.count})${choice.getChoiceName()}<br>                     
+                </c:forEach>
         </c:forEach>
             </ol>
         

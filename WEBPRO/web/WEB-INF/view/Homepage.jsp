@@ -83,7 +83,7 @@
                                 <td>${i.getQuizId()}</td>
                                 <td>${i.getQuizName()}</td>                                
                                                             
-                                <td><a href="Quiz">Do Test</a></td>                                                          
+                                <td><a href="Quiz?id=${i.getQuizId()}">Do Test</a></td>                                                          
                             </tr>
                            </c:forEach>
                             
