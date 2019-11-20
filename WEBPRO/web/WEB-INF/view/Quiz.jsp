@@ -14,14 +14,22 @@
     </head>
     <body>
         <h1>Hello World!</h1>
-        <ol>
+
         <c:forEach items="${q}" var="i" varStatus="vs">
-                ${vs.count}${i.getQuestionName()}<br>
+            ${vs.count}${i.getQuestionName()}<br>
+            <form action="Quiz">
                 <c:forEach items="${i.getChoiceCollection()}" var="choice" varStatus="cvs">
-                    choice(${cvs.count})${choice.getChoiceName()}<br>                     
+
+                    <input type="radio" name="correct" value="choice.getCorrect()">(${cvs.count})${choice.getChoiceName()}<br> 
+
                 </c:forEach>
+            </form> 
         </c:forEach>
-            </ol>
-        
+            <form action="Quiz">
+                <input type="submit" >
+            </form>
+
+
+
     </body>
 </html>

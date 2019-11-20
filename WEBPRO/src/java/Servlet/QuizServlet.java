@@ -57,22 +57,9 @@ public class QuizServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession();
-        Users user = (Users) session.getAttribute("user");
-        QuizJpaController qjc = new QuizJpaController(utx, emf);
-        List<Quiz> quiz = qjc.findQuizEntities();
-        QuestionJpaController qujc = new QuestionJpaController(utx, emf);
-        List<Question> question = qujc.findQuestionEntities();
-        ChoiceJpaController cjc = new ChoiceJpaController(utx, emf);
-        List<Choice> choice = cjc.findChoiceEntities();
-        for (Quiz q : quiz) {
-            q.getQuestionCollection();
-
-            getServletContext().getRequestDispatcher("/WEB-INF/view/Quiz.jsp").forward(request, response);
-            return;
-        }
-
-        request.setAttribute("quiz", quiz);
-        getServletContext().getRequestDispatcher("/WEB-INF/view/Quiz.jsp").forward(request, response);
+        EntityManager em = emf.createEntityManager();
+        String correct = request.getParameter("correct");
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -89,21 +76,9 @@ public class QuizServlet extends HttpServlet {
             throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
         EntityManager em = emf.createEntityManager();
-//        QuestionJpaController qujc = new QuestionJpaController(utx, emf);
-//        List<Question> question = qujc.findQuestionEntities();
-//        ChoiceJpaController cjc = new ChoiceJpaController(utx, emf);
-//        List<Choice> choice = cjc.findChoiceEntities();
-//        QuizJpaController qjc = new QuizJpaController(utx, emf);
         Quiz quiz = em.find(Quiz.class, id);
-        
-
         Collection<Question> quizcollection = quiz.getQuestionCollection();
-        
-        //System.out.println(quiz.toString());
-       // System.out.println(qc.toString());
-        
         request.setAttribute("q",quizcollection);
-        
         getServletContext().getRequestDispatcher("/WEB-INF/view/Quiz.jsp").forward(request, response);
         
     }
