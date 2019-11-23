@@ -20,7 +20,7 @@
             <form action="Quiz">
                 <c:forEach items="${i.getChoiceCollection()}" var="choice" varStatus="cvs">
 
-                    <input type="radio" name="correct" value="choice.getCorrect()">(${cvs.count})${choice.getChoiceName()}<br> 
+                    <input type="radio" name="correct_${choice.getChoiceId()}" value="${choice.getChoiceId()}">(${cvs.count})${choice.getChoiceName()}<br> 
 
                 </c:forEach>
             </form> 

@@ -59,6 +59,20 @@ public class QuizServlet extends HttpServlet {
         HttpSession session = request.getSession();
         EntityManager em = emf.createEntityManager();
         String correct = request.getParameter("correct");
+        ChoiceJpaController cjc = new ChoiceJpaController(utx, emf);
+        List<Choice> c = cjc.findChoiceEntities();
+        int[] aryc = new int[c.size()];
+        for (int i = 0; i < c.size(); i++) {
+            int idc = Integer.parseInt(request.getParameter("correct_"+i));
+            aryc[i] = idc;
+        }
+        for (int i = 0; i < aryc.length; i++) {
+            Choice cc = cjc.findChoice(i);
+            if (cc.getChoiceId().equals(c)) {
+                
+            }
+        }
+        
         
     }
 
