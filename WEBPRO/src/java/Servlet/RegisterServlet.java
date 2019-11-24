@@ -56,7 +56,7 @@ public class RegisterServlet extends HttpServlet {
         UsersJpaController ujc = new UsersJpaController(utx, emf);
         List<Users> user = ujc.findUsersEntities();
 
-        if (username.isEmpty() || password.isEmpty() || fullname.isEmpty() || email.isEmpty() || type.isEmpty()
+        if (username.isEmpty() || password.isEmpty() || fullname.isEmpty() || email.isEmpty() 
                 || confirmedpass.isEmpty() || !password.equals(confirmedpass)) {
             request.setAttribute("message", "Not completed");
             getServletContext().getRequestDispatcher("/WEB-INF/view/Register.jsp").forward(request, response);
