@@ -1,0 +1,73 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="47D9D3B5-B1E3-3D60-3DD8-FFD284ED8159" name="Question">
+<createdBy>ohmsu</createdBy>
+<createdTime>2562-11-11 12:56:54 UTC</createdTime>
+<ownerDesignName>WEBPRODB</ownerDesignName>
+<engineerTo>
+<item key="15A11C47-B120-B704-0A40-12FE470E3156" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="QUESTION_ID" id="37263286-F736-74F7-5282-5BA67F85F321">
+<createdBy>ohmsu</createdBy>
+<createdTime>2562-11-11 12:57:41 UTC</createdTime>
+<ownerDesignName>WEBPRODB</ownerDesignName>
+<engineerTo>
+<item key="15A11C47-B120-B704-0A40-12FE470E3156" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="QUESTION_NAME" id="9AA09189-0CB0-FF47-2485-D1B05523BDF0">
+<createdBy>ohmsu</createdBy>
+<createdTime>2562-11-11 12:58:06 UTC</createdTime>
+<ownerDesignName>WEBPRODB</ownerDesignName>
+<engineerTo>
+<item key="15A11C47-B120-B704-0A40-12FE470E3156" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="QUIZ_ID" id="675CC548-2890-7778-2DB1-9DB898D0A8DD">
+<createdBy>ohmsu</createdBy>
+<createdTime>2562-11-12 12:13:09 UTC</createdTime>
+<generatorID>F4FC4F62-3BB9-3472-BC56-A9A1F8DEA933</generatorID>
+<ownerDesignName>WEBPRODB</ownerDesignName>
+<engineerTo>
+<item key="15A11C47-B120-B704-0A40-12FE470E3156" value="true"/>
+</engineerTo>
+<referedAttribute>CC6B8E29-A5C7-0D8E-8D80-3EE0C6A08F22</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="F884B336-4E12-A8E3-4318-D78D56F57FD8" name="Question PK">
+<createdBy>ohmsu</createdBy>
+<createdTime>2562-11-11 12:58:05 UTC</createdTime>
+<ownerDesignName>WEBPRODB</ownerDesignName>
+<engineerTo>
+<item key="15A11C47-B120-B704-0A40-12FE470E3156" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>37263286-F736-74F7-5282-5BA67F85F321</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

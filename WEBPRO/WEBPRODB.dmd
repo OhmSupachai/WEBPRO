@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="WEBPRODB" id="596DF4E4-7A90-FC37-3C20-A48FF9198B3D" version="3.5">
+<createdBy>ohmsu</createdBy>
+<createdTime>2562-11-11 12:40:58 UTC</createdTime>
+<ownerDesignName>WEBPRODB</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>596DF4E4-7A90-FC37-3C20-A48FF9198B3D</designId>
+</OSDM_Design>

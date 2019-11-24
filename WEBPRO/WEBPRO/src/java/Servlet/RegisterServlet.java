@@ -73,7 +73,7 @@ public class RegisterServlet extends HttpServlet {
             u.setPassword(password);
             u.setQuizCollection(null);
             u.setUserEmail(email);
-            u.setUserType("Student");
+            u.setUserType(type);
             u.setUserFullname(fullname);
 
             ujc.create(u);
@@ -87,7 +87,7 @@ public class RegisterServlet extends HttpServlet {
             request.setAttribute("message", "Not completed");
             getServletContext().getRequestDispatcher("/WEB-INF/view/Register.jsp").forward(request, response);
         }
-//        ujc.create(u);
+        ujc.create(u);
 
         getServletContext().getRequestDispatcher("/WEB-IMF/view/Login.jsp").forward(request, response);
 
@@ -143,6 +143,8 @@ public class RegisterServlet extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 
-    
+    public static void main(String[] args) {
+
+    }
 
 }

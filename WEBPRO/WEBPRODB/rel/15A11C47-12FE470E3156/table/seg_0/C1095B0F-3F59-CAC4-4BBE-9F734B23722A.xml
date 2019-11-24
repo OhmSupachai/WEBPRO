@@ -1,0 +1,89 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C1095B0F-3F59-CAC4-4BBE-9F734B23722A" name="Choice">
+<createdBy>ohmsu</createdBy>
+<createdTime>2562-11-12 12:22:18 UTC</createdTime>
+<generatorID>11403829-B16C-9067-B1B7-58574BCFA36C</generatorID>
+<ownerDesignName>WEBPRODB</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CHOICE_ID" id="4965C1A0-C414-E56F-BFAC-59E6FD36C662">
+<createdBy>ohmsu</createdBy>
+<createdTime>2562-11-12 12:22:18 UTC</createdTime>
+<generatorID>87326992-A7E3-369F-CFE3-93CCF8E98B56</generatorID>
+<ownerDesignName>WEBPRODB</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CHOICE_NAME" id="4EA5ADA9-4C6B-4CB8-C76E-5AE5DE717D11">
+<createdBy>ohmsu</createdBy>
+<createdTime>2562-11-12 12:22:18 UTC</createdTime>
+<generatorID>EBF41441-F6E1-4AD2-27CD-170380E4E726</generatorID>
+<ownerDesignName>WEBPRODB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CORRECT" id="92920B06-637D-5E53-7068-3314183E133D">
+<createdBy>ohmsu</createdBy>
+<createdTime>2562-11-12 12:22:18 UTC</createdTime>
+<generatorID>92E20E4A-0319-0854-EB2A-D664160EDB73</generatorID>
+<ownerDesignName>WEBPRODB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Question_QUESTION_ID" id="0E412FA1-9F67-879E-3875-9D374314DF17">
+<createdBy>ohmsu</createdBy>
+<createdTime>2562-11-12 12:22:18 UTC</createdTime>
+<generatorID>85C2E125-B5EE-DE6D-5EF3-1920EFC6E831</generatorID>
+<ownerDesignName>WEBPRODB</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9613971E-106E-812A-D476-AE30DB36FECB" referredColumn="4C781DD1-C6B4-CE43-642F-B24A54A0772A"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="979DDBE6-C116-545A-9BF5-893D1FD68EBA" name="Choice_PK">
+<createdBy>ohmsu</createdBy>
+<createdTime>2562-11-12 12:22:18 UTC</createdTime>
+<generatorID>76A24058-89CF-05AD-40FE-169DE370E0ED</generatorID>
+<ownerDesignName>WEBPRODB</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4965C1A0-C414-E56F-BFAC-59E6FD36C662"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="FDC8E061-B885-DC33-045B-9109FEA5F25D" name="Choice_Question_FK">
+<createdBy>ohmsu</createdBy>
+<createdTime>2562-11-12 12:22:18 UTC</createdTime>
+<generatorID>DAD30311-B548-5BED-FE9A-209A59915C16</generatorID>
+<ownerDesignName>WEBPRODB</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0E412FA1-9F67-879E-3875-9D374314DF17"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

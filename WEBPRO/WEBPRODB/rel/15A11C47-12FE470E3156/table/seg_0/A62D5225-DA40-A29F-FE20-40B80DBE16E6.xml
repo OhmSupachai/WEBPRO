@@ -1,0 +1,76 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A62D5225-DA40-A29F-FE20-40B80DBE16E6" name="Question">
+<createdBy>ohmsu</createdBy>
+<createdTime>2562-11-12 12:22:18 UTC</createdTime>
+<generatorID>47D9D3B5-B1E3-3D60-3DD8-FFD284ED8159</generatorID>
+<ownerDesignName>WEBPRODB</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="QUESTION_ID" id="4C781DD1-C6B4-CE43-642F-B24A54A0772A">
+<createdBy>ohmsu</createdBy>
+<createdTime>2562-11-12 12:22:18 UTC</createdTime>
+<generatorID>37263286-F736-74F7-5282-5BA67F85F321</generatorID>
+<ownerDesignName>WEBPRODB</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="QUESTION_NAME" id="3198C79B-4627-4CF7-5A5D-374AEB3E255C">
+<createdBy>ohmsu</createdBy>
+<createdTime>2562-11-12 12:22:18 UTC</createdTime>
+<generatorID>9AA09189-0CB0-FF47-2485-D1B05523BDF0</generatorID>
+<ownerDesignName>WEBPRODB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Quiz_QUIZ_ID" id="59ACB8B0-23CD-48F8-3BD7-A170F7F88AB8">
+<createdBy>ohmsu</createdBy>
+<createdTime>2562-11-12 12:22:18 UTC</createdTime>
+<generatorID>675CC548-2890-7778-2DB1-9DB898D0A8DD</generatorID>
+<ownerDesignName>WEBPRODB</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0FCC0497-8F5E-F979-488F-6C506EE39F64" referredColumn="9B8F0A00-46F6-564F-82E0-D5AE1C184D6C"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="CBAC4FAE-3EDB-A6ED-9651-3B94089D7BCE" name="Question_PK">
+<createdBy>ohmsu</createdBy>
+<createdTime>2562-11-12 12:22:18 UTC</createdTime>
+<generatorID>F884B336-4E12-A8E3-4318-D78D56F57FD8</generatorID>
+<ownerDesignName>WEBPRODB</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4C781DD1-C6B4-CE43-642F-B24A54A0772A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="61BCFC51-9D68-2E73-3BA2-A356D58F5EFD" name="Question_Quiz_FK">
+<createdBy>ohmsu</createdBy>
+<createdTime>2562-11-12 12:22:18 UTC</createdTime>
+<generatorID>F4FC4F62-3BB9-3472-BC56-A9A1F8DEA933</generatorID>
+<ownerDesignName>WEBPRODB</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="59ACB8B0-23CD-48F8-3BD7-A170F7F88AB8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
