@@ -19,24 +19,26 @@
         <h2 style="color:darkblue;font-family:courier;font-weight: bold;" align="center">The Online Exam</h2>
         <hr>
         <h1 style="color:red;font-family:courier;font-weight: bold;" align="center">TestTitle</h1>
-        <table>
-            <tr>
-            <c:forEach items="${q}" var="i" varStatus="vs">
-                ${vs.count}${i.getQuestionName()}<br>
-                <form action="Quiz">
-                    <tr> 
-                    <c:forEach items="${i.getChoiceCollection()}" var="choice" varStatus="cvs">
-                        <td>
-                            <input type="radio" name="correct_${choice.getChoiceId()}" value="${choice.getChoiceId()}">(${cvs.count})${choice.getChoiceName()}<br> 
-                        </td>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4">
+                </div>
+                <div class="col-md-4" align="center">
+                    <c:forEach items="${q}" var="i" varStatus="vs">
+                        ${vs.count}${i.getQuestionName()}<br>
+                        <form action="Quiz">
+                            <c:forEach items="${i.getChoiceCollection()}" var="choice" varStatus="cvs">
+                                <input type="radio" name="correct_${choice.getChoiceId()}" value="${choice.getChoiceId()}">(${cvs.count})${choice.getChoiceName()}<br> 
+                            </c:forEach>
+                        </form> 
                     </c:forEach>
-                    </tr>
-                </form> 
-            </c:forEach>
-        </tr>
-    </table>
-    <form action="Quiz">
-        <input type="submit" >
-    </form> 
-</body>
+                </div>
+                <div class="col-md-4">
+                </div>
+            </div>
+        </div>
+        <form action="Quiz">
+            <input type="submit" >
+        </form> 
+    </body>
 </html>
