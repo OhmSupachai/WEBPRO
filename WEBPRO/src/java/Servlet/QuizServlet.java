@@ -61,18 +61,29 @@ public class QuizServlet extends HttpServlet {
         String correct = request.getParameter("correct");
         ChoiceJpaController cjc = new ChoiceJpaController(utx, emf);
         List<Choice> c = cjc.findChoiceEntities();
+        QuizJpaController qjc = new QuizJpaController(utx, emf);
+        List<Quiz> q = qjc.findQuizEntities();
+        QuestionJpaController qtjc = new QuestionJpaController(utx, emf);
+        List<Question> question = qtjc.findQuestionEntities();
+        Quiz qq = em.find(Quiz.class, 1);
+        Collection<Question> questionCollection = qq.getQuestionCollection();
+        
         int[] aryc = new int[c.size()];
-        for (int i = 0; i < c.size(); i++) {
-            int idc = Integer.parseInt(request.getParameter("correct_"+i));
-            aryc[i] = idc;
+        int score = 0;
+        for (int i = 1; i <= questionCollection.size(); i++) {
+            String sc ="correct_"+i;
+            int idc = Integer.parseInt(request.getParameter(sc));
+            aryc[i]=idc;
         }
-        for (int i = 0; i < aryc.length; i++) {
-            Choice cc = cjc.findChoice(i);
-            if (cc.getChoiceId().equals(c)) {
-                
-            }
+        for (int i = 1; i < 10; i++) {
+            System.out.println(aryc[i]);
         }
         
+        
+        
+        request.setAttribute("score", score);
+        getServletContext().getRequestDispatcher("/WEB-INF/view/Scores.jsp").forward(request, response);
+       
         
     }
 
