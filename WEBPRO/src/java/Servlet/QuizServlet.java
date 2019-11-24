@@ -75,11 +75,23 @@ public class QuizServlet extends HttpServlet {
             int idc = Integer.parseInt(request.getParameter(sc));
             aryc[i]=idc;
         }
-        for (int i = 1; i < 10; i++) {
+        for (int i = 1; i < aryc.length; i++) {
             System.out.println(aryc[i]);
         }
-        
-        
+        for(Choice cc : c){
+            for (int i : aryc) {
+                if (cc.getChoiceId()==i) {
+                    System.out.println(cc.getChoiceName());
+                    
+                    if (cc.getCorrect()=='T') {
+                        System.out.println(cc.getCorrect());
+                        score++;
+                    }
+                    
+                }
+            }
+        }
+        System.out.println(score);
         
         request.setAttribute("score", score);
         getServletContext().getRequestDispatcher("/WEB-INF/view/Scores.jsp").forward(request, response);
