@@ -51,7 +51,7 @@ public class RegisterServlet extends HttpServlet {
         String confirmedpass = request.getParameter("conpass");
         String fullname = request.getParameter("fullname");
         String email = request.getParameter("email");
-        String type = request.getParameter("type");
+        
 
         UsersJpaController ujc = new UsersJpaController(utx, emf);
         List<Users> user = ujc.findUsersEntities();
