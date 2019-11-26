@@ -1,5 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <filter>
+        <filter-name>QuitQuizGillter</filter-name>
+        <filter-class>Fillter.QuitQuizGillter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>QuitQuizGillter</filter-name>
+        <servlet-name>EditpassServlet</servlet-name>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>QuitQuizGillter</filter-name>
+        <servlet-name>GuestServlet</servlet-name>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>QuitQuizGillter</filter-name>
+        <servlet-name>LogoutServlet</servlet-name>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>QuitQuizGillter</filter-name>
+        <servlet-name>QuizServlet</servlet-name>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>QuitQuizGillter</filter-name>
+        <url-pattern>/Homepager.jsp</url-pattern>
+        <url-pattern>/Quiz.jsp</url-pattern>
+        <url-pattern>/Scores.jsp</url-pattern>
+        <url-pattern>/ViewAccount.jsp</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+    </filter-mapping>
     <servlet>
         <servlet-name>LoginServlet</servlet-name>
         <servlet-class>Servlet.LoginServlet</servlet-class>
