@@ -1,35 +1,34 @@
-    /*
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 package Servlet;
 
-import Controller.QuizJpaController;
+import Controller.UsersJpaController;
+import Controller.exceptions.NonexistentEntityException;
+import Controller.exceptions.RollbackFailureException;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.annotation.Resource;
-import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.PersistenceUnit;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.transaction.UserTransaction;
-
-import model.Users;
-import Controller.UsersJpaController;
-import java.util.List;
 import javax.servlet.http.HttpSession;
-import model.Quiz;
+import javax.transaction.UserTransaction;
+import model.Users;
 
 /**
  *
  * @author ohmsu
  */
-public class LoginServlet extends HttpServlet {
-
+public class EditpassServlet extends HttpServlet {
     @PersistenceUnit(unitName = "WEBPROPU")
     EntityManagerFactory emf;
 
@@ -47,34 +46,48 @@ public class LoginServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
         response.setContentType("text/html;charset=UTF-8");
-
-        String username = request.getParameter("user");
-        String password = request.getParameter("pass");
+        HttpSession session = request.getSession();
+        Users user = (Users) session.getAttribute("user");
+        String oldpassword = request.getParameter("oldpassword");
+        String newpassword = request.getParameter("newpassword");
+        String confirmnewpassword = request.getParameter("confirmnewpassword");
+        String name = request.getParameter("home");
         UsersJpaController ujc = new UsersJpaController(utx, emf);
         List<Users> users = ujc.findUsersEntities();
-        if (username.isEmpty() || password.isEmpty()) {
-            request.setAttribute("message", "ใส่ไม่ครบ");
-            getServletContext().getRequestDispatcher("/WEB-INF/view/Login.jsp").forward(request, response);
-
-        } else {
-            for (Users user : users) {
-                if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
-                    HttpSession session = request.getSession();
+        if (name.equals("Return to Home")) {
+            getServletContext().getRequestDispatcher("/WEB-INF/view/Homepage.jsp").forward(request, response);
+        }
+        else{
+        if (oldpassword.isEmpty()||newpassword.isEmpty()||confirmnewpassword.isEmpty()) {
+             getServletContext().getRequestDispatcher("/WEB-INF/view/ViewAccount.jsp").forward(request, response);
+        }
+       
+        if (user.getPassword().equals(oldpassword)) {
+        for (Users u : users) {
+            if (u.getPassword().endsWith(user.getPassword())) {
+                if (newpassword.equals(confirmnewpassword)) {
+                    user.setPassword(newpassword);
+                    try {
+                        ujc.edit(user);
+                    } catch (NonexistentEntityException ex) {
+                        Logger.getLogger(EditpassServlet.class.getName()).log(Level.SEVERE, null, ex);
+                    } catch (RollbackFailureException ex) {
+                        Logger.getLogger(EditpassServlet.class.getName()).log(Level.SEVERE, null, ex);
+                    } catch (Exception ex) {
+                        Logger.getLogger(EditpassServlet.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                     session.setAttribute("user", user);
-                    QuizJpaController qjc = new QuizJpaController(utx, emf);
-                    List<Quiz> quiz = qjc.findQuizEntities();
-                    session.setAttribute("quiz", quiz);
                     getServletContext().getRequestDispatcher("/WEB-INF/view/Homepage.jsp").forward(request, response);
                     return;
                 }
-
             }
         }
-        request.setAttribute("message", "Invalid");
-        getServletContext().getRequestDispatcher("/WEB-INF/view/Login.jsp").forward(request, response);
-
+        
+        }
+        
+        }
+       getServletContext().getRequestDispatcher("/WEB-INF/view/ViewAccount.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -89,17 +102,8 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        HttpSession session = request.getSession();
-        Users user = (Users) session.getAttribute("user");
-
-        if (user == null) {
-            getServletContext().getRequestDispatcher("/WEB-INF/view/Login.jsp").forward(request, response);
-        }
-        QuizJpaController qjc = new QuizJpaController(utx, emf);
-                    List<Quiz> quiz = qjc.findQuizEntities();
-                    request.setAttribute("quiz", quiz);
-        getServletContext().getRequestDispatcher("/WEB-INF/view/Homepage.jsp").forward(request, response);
-
+        
+        getServletContext().getRequestDispatcher("/WEB-INF/view/ViewAccount.jsp").forward(request, response);
     }
 
     /**

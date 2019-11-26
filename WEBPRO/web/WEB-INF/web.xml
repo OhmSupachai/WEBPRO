@@ -20,6 +20,10 @@
         <servlet-name>GuestServlet</servlet-name>
         <servlet-class>Servlet.GuestServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>EditpassServlet</servlet-name>
+        <servlet-class>Servlet.EditpassServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -39,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>GuestServlet</servlet-name>
         <url-pattern>/Guest</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditpassServlet</servlet-name>
+        <url-pattern>/Editpass</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

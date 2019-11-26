@@ -27,6 +27,7 @@ import model.Users;
  * @author ohmsu
  */
 public class GuestServlet extends HttpServlet {
+
     @PersistenceUnit(unitName = "WEBPROPU")
     EntityManagerFactory emf;
 
@@ -45,22 +46,25 @@ public class GuestServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-      HttpSession session = request.getSession();
-      String username = request.getParameter("user");
+
+        HttpSession session = request.getSession();
+        String username = request.getParameter("user");
+
         UsersJpaController ujc = new UsersJpaController(utx, emf);
-      List<Users> user = ujc.findUsersEntities();
+        List<Users> user = ujc.findUsersEntities();
+
         for (Users u : user) {
             if (u.getUsername().equals(username)) {
                 session.setAttribute("user", u);
                 QuizJpaController qjc = new QuizJpaController(utx, emf);
-                    List<Quiz> quiz = qjc.findQuizEntities();
-                    request.setAttribute("quiz", quiz);
+                List<Quiz> quiz = qjc.findQuizEntities();
+                session.setAttribute("quiz", quiz);
                 getServletContext().getRequestDispatcher("/WEB-INF/view/Homepage.jsp").forward(request, response);
                 return;
             }
         }
         getServletContext().getRequestDispatcher("/WEB-INF/view/Login.jsp").forward(request, response);
-        
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

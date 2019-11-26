@@ -93,7 +93,7 @@
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown">Menu</a>
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                                        <a class="dropdown-item" href="AccountPage">View Account</a> <a class="dropdown-item" href="Logout">Logout</a>
+                                        <a class="dropdown-item" href="Editpass">View Account</a> <a class="dropdown-item" href="Logout">Logout</a>
                                         <div class="dropdown-divider">
                                         </div> <a class="dropdown-item" href="#">Separated link</a>
                                     </div>
