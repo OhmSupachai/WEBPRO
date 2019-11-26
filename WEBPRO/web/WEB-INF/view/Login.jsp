@@ -83,7 +83,7 @@
                             <br><br><br><br>
                            
                             <h5>Continue as Guest</h5>
-                            <a href="Homepage">Stay as Guest</a>
+                            <a href="Guest?user=Guest">Stay as Guest</a>
                         </div>
                     </div>
                 </div>
