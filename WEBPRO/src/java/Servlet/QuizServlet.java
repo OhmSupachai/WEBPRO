@@ -69,29 +69,38 @@ public class QuizServlet extends HttpServlet {
         int score = 0;
         for (int i = 1; i <= questionCollection.size(); i++) {
             String sc = "correct_" + i;
-            int idc = Integer.parseInt(request.getParameter(sc));
-            aryc[i] = idc;
-        }
-        for (int i = 1; i < aryc.length; i++) {
-            System.out.println(aryc[i]);
-        }
-        for (Choice cc : c) {
-            for (int i : aryc) {
-                if (cc.getChoiceId() == i) {
-                    System.out.println(cc.getChoiceName());
+            if (sc == null) {
+                getServletContext().getRequestDispatcher("/WEB-INF/view/Quiz.jsp").forward(request, response);
+                return;
+            } else {
+                int idc = Integer.parseInt(request.getParameter(sc));
 
-                    if (cc.getCorrect() == 'T') {
-                        System.out.println(cc.getCorrect());
-                        score++;
+                aryc[i] = idc;
+            }
+
+        }
+        if (aryc == null) {
+            getServletContext().getRequestDispatcher("/WEB-INF/view/Quiz.jsp").forward(request, response);
+        } else {
+            for (Choice cc : c) {
+                for (int i : aryc) {
+                    if (cc.getChoiceId() == i) {
+                        System.out.println(cc.getChoiceName());
+
+                        if (cc.getCorrect() == 'T') {
+                            System.out.println(cc.getCorrect());
+                            score++;
+                        }
+
                     }
-
                 }
             }
-        }
-        System.out.println(score);
+            System.out.println(score);
 
-        request.setAttribute("score", score);
-        getServletContext().getRequestDispatcher("/WEB-INF/view/Scores.jsp").forward(request, response);
+            request.setAttribute("score", score);
+            getServletContext().getRequestDispatcher("/WEB-INF/view/Scores.jsp").forward(request, response);
+        }
+        getServletContext().getRequestDispatcher("/WEB-INF/view/Quiz.jsp").forward(request, response);
 
     }
 
