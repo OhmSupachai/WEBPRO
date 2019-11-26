@@ -12,12 +12,6 @@
     </filter-mapping>
     <filter-mapping>
         <filter-name>QuitQuizGillter</filter-name>
-        <servlet-name>GuestServlet</servlet-name>
-        <dispatcher>REQUEST</dispatcher>
-        <dispatcher>FORWARD</dispatcher>
-    </filter-mapping>
-    <filter-mapping>
-        <filter-name>QuitQuizGillter</filter-name>
         <servlet-name>LogoutServlet</servlet-name>
         <dispatcher>REQUEST</dispatcher>
         <dispatcher>FORWARD</dispatcher>
