@@ -58,45 +58,41 @@ public class QuizServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession();
         EntityManager em = emf.createEntityManager();
-        String correct = request.getParameter("correct");
+
         ChoiceJpaController cjc = new ChoiceJpaController(utx, emf);
         List<Choice> c = cjc.findChoiceEntities();
-        QuizJpaController qjc = new QuizJpaController(utx, emf);
-        List<Quiz> q = qjc.findQuizEntities();
-        QuestionJpaController qtjc = new QuestionJpaController(utx, emf);
-        List<Question> question = qtjc.findQuestionEntities();
+
         Quiz qq = em.find(Quiz.class, 1);
         Collection<Question> questionCollection = qq.getQuestionCollection();
-        
+
         int[] aryc = new int[c.size()];
         int score = 0;
         for (int i = 1; i <= questionCollection.size(); i++) {
-            String sc ="correct_"+i;
+            String sc = "correct_" + i;
             int idc = Integer.parseInt(request.getParameter(sc));
-            aryc[i]=idc;
+            aryc[i] = idc;
         }
         for (int i = 1; i < aryc.length; i++) {
             System.out.println(aryc[i]);
         }
-        for(Choice cc : c){
+        for (Choice cc : c) {
             for (int i : aryc) {
-                if (cc.getChoiceId()==i) {
+                if (cc.getChoiceId() == i) {
                     System.out.println(cc.getChoiceName());
-                    
-                    if (cc.getCorrect()=='T') {
+
+                    if (cc.getCorrect() == 'T') {
                         System.out.println(cc.getCorrect());
                         score++;
                     }
-                    
+
                 }
             }
         }
         System.out.println(score);
-        
+
         request.setAttribute("score", score);
         getServletContext().getRequestDispatcher("/WEB-INF/view/Scores.jsp").forward(request, response);
-       
-        
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -115,9 +111,9 @@ public class QuizServlet extends HttpServlet {
         EntityManager em = emf.createEntityManager();
         Quiz quiz = em.find(Quiz.class, id);
         Collection<Question> quizcollection = quiz.getQuestionCollection();
-        request.setAttribute("q",quizcollection);
+        request.setAttribute("q", quizcollection);
         getServletContext().getRequestDispatcher("/WEB-INF/view/Quiz.jsp").forward(request, response);
-        
+
     }
 
     /**
