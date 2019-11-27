@@ -58,6 +58,7 @@
                     <div class="card" style="height: 100%">
                         <div class="p-5 card-body">
                             <form action="Login" method="post">
+                                ${message}
                                 <br>
                                 <h3>Login</h3>
                                  

@@ -82,7 +82,9 @@
                             </tr>
 
                         </tbody></table>
+                    <center> ${message}</center>
                     <br><br>
+                    
                     <div class="row">
                         <div class="col-md-12" align="center">
                             <input type="submit" class="btn btn-warning" value="Confirm Register Data" align="center">

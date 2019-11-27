@@ -64,7 +64,7 @@ public class RegisterServlet extends HttpServlet {
 
         Users u = new Users();
         if (u == null) {
-            request.setAttribute("message", "Not completed");
+            request.setAttribute("message", "please fill all data completely");
             getServletContext().getRequestDispatcher("/WEB-INF/view/Register.jsp").forward(request, response);
         }
         if (password.equals(confirmedpass)) {
@@ -84,7 +84,7 @@ public class RegisterServlet extends HttpServlet {
         }
 
         if (u == null) {
-            request.setAttribute("message", "Not completed");
+            request.setAttribute("message", "please fill all data completely");
             getServletContext().getRequestDispatcher("/WEB-INF/view/Register.jsp").forward(request, response);
         }
 //        ujc.create(u);

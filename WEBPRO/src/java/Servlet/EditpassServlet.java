@@ -56,16 +56,18 @@ public class EditpassServlet extends HttpServlet {
         UsersJpaController ujc = new UsersJpaController(utx, emf);
         List<Users> users = ujc.findUsersEntities();
         if (name.equals("Return to Home")) {
+            
             getServletContext().getRequestDispatcher("/WEB-INF/view/Homepage.jsp").forward(request, response);
         }
         else{
         if (oldpassword.isEmpty()||newpassword.isEmpty()||confirmnewpassword.isEmpty()) {
+            request.setAttribute("message", "please fill all data completely");
              getServletContext().getRequestDispatcher("/WEB-INF/view/ViewAccount.jsp").forward(request, response);
         }
        
         if (user.getPassword().equals(oldpassword)) {
         for (Users u : users) {
-            if (u.getPassword().endsWith(user.getPassword())) {
+            if (u.getPassword().equals(user.getPassword())) {
                 if (newpassword.equals(confirmnewpassword)) {
                     user.setPassword(newpassword);
                     try {
@@ -87,6 +89,7 @@ public class EditpassServlet extends HttpServlet {
         }
         
         }
+         request.setAttribute("message", "Password is not equals");
        getServletContext().getRequestDispatcher("/WEB-INF/view/ViewAccount.jsp").forward(request, response);
     }
 
