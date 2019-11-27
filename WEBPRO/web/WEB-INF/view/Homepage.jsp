@@ -64,6 +64,7 @@
                     <center> <h4 style="color: azure;font-family: 'Montserrat', sans-serif; font-weight: bold;" align="center">Welcome : ${user.getUserFullname()}</h4> </center>
                     
                 </div>
+                    <br>
                 <div class="col-md-4">
                 </div>
                 <div class="col-md-4" align="left">
@@ -76,15 +77,12 @@
                     <nav class="navbar navbar-expand-lg navbar-light bg-light static-top navbar-dark bg-dark">
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                             <span class="navbar-toggler-icon" ></span>
-                        </button> <h4 style="color:whitesmoke;font-family:courier;font-weight: bold;">Search test title : </h4>
+                        </button> <h4 style="color: azure;font-family: 'Montserrat', sans-serif; font-weight: bold;" align="center">Quiz list : </h4>
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             
                             <form class="form-inline">
                                 <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h4>
-                                <input class="form-control mr-sm-2" type="text" placeholder="Find the test that you want to do" /> 
-                                <button class="btn btn-primary my-2 my-sm-0" type="submit">
-                                    Search
-                                </button>
+                                
                             </form>
                             <ul class="navbar-nav ml-md-auto">
                                 <li class="nav-item active">
@@ -94,8 +92,7 @@
                                     <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown">Menu</a>
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                                         <a class="dropdown-item" href="Editpass">View Account</a> <a class="dropdown-item" href="Logout">Logout</a>
-                                        <div class="dropdown-divider">
-                                        </div> <a class="dropdown-item" href="#">Separated link</a>
+                                        
                                     </div>
                                 </li>
                             </ul>
@@ -112,7 +109,7 @@
                             <tr>
                                 <th>No.</th>  
                                 <th>Title</th>  
-                                <th>Creator</th>
+                                <th>Do test</th>
                                 <th></th>                            
                             </tr>
                         </thead>

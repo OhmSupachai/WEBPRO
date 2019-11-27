@@ -53,6 +53,7 @@
             </div>
             <hr>
         </div>
+        <br>
     <center>   <div class="card text-white bg-warning mb-3 " style="max-width: 18rem;">
             <div class="card-header"> <h1>Your score</h1></div>
             <div class="card-body">
