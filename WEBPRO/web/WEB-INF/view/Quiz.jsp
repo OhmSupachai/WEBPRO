@@ -30,54 +30,54 @@
             <h1 style="color:white;font-family: 'Lobster', cursive;font-weight: bold;" align="center">QuitQuiz</h1>
             <h2 style="color: azure;font-family: 'Montserrat', sans-serif; font-weight: bold;" align="center">Let's do the quiz</h2>
             <div class="text-center">
-                   <div class="spinner-grow text-primary" role="status">
-                         <span class="sr-only">Loading...</span>
-                     </div>
-                     <div class="spinner-grow text-secondary" role="status">
-                         <span class="sr-only">Loading...</span>
-                     </div>
-                     <div class="spinner-grow text-success" role="status">
-                         <span class="sr-only">Loading...</span>
-                     </div>
-                     <div class="spinner-grow text-danger" role="status">
-                         <span class="sr-only">Loading...</span>
-                     </div>
-                     <div class="spinner-grow text-warning" role="status">
-                         <span class="sr-only">Loading...</span>
-                     </div>
-                     <div class="spinner-grow text-info" role="status">
-                         <span class="sr-only">Loading...</span>
-                     </div>
-                     <div class="spinner-grow text-light" role="status">
-                         <span class="sr-only">Loading...</span>
-                     </div> 
+                <div class="spinner-grow text-primary" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+                <div class="spinner-grow text-secondary" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+                <div class="spinner-grow text-success" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+                <div class="spinner-grow text-danger" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+                <div class="spinner-grow text-warning" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+                <div class="spinner-grow text-info" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+                <div class="spinner-grow text-light" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div> 
             </div>
             <hr>
         </div>
 
         <div class="row justify-content-center"style="height: 100%;width: 100%">
-                <div class="card col-7" style="height: 100%">
-            <div class="card-body">
-                <center>  <h5 class="card-title">START</h5> </center>
-                <c:forEach items="${q}" var="i" varStatus="vs">
-<table class="table table-striped">
-    
-                    ${vs.count}${i.getQuestionName()}<br>
-                    <form action="Quiz" method="post">
-                        <c:forEach items="${i.getChoiceCollection()}" var="choice" varStatus="cvs">
+            <div class="card col-7" style="height: 100%">
+                <div class="card-body">
+                    <center>  <h5 class="card-title">START</h5> </center>
+                        <c:forEach items="${q}" var="i" varStatus="vs">
+                        <table class="table table-striped">
 
-                            <input type="radio" name="correct_${vs.count}" value="${choice.getChoiceId()}">(${cvs.count})${choice.getChoiceName()}<br> 
+                            ${vs.count}) ${i.getQuestionName()}<br>
+                            <form action="Quiz" method="post"  >
+                                <c:forEach items="${i.getChoiceCollection()}" var="choice" varStatus="cvs">
+
+                                    <input type="radio" name="correct_${vs.count}" value="${choice.getChoiceId()}" required>(${cvs.count})${choice.getChoiceName()}<br> 
+
+                                </c:forEach>
+                           
 
                         </c:forEach>
 
-
-                    </c:forEach>
-
-</table>
-                            <center> <button input type="submit" class="btn btn-success">Submit</button> </center>
-                </form>
+                    </table>
+                    <center> <button input type="submit" class="btn btn-success">Submit</button> </center>
+                    </form>
+                </div>
             </div>
-        </div>
         </div>
 
 
